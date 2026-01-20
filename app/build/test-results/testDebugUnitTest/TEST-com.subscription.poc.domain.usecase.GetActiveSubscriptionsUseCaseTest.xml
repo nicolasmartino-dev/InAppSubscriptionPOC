@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.subscription.poc.domain.usecase.GetActiveSubscriptionsUseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-01-20T12:58:53.646Z" hostname="Mac-mini-de-Nicolas-Martino.local" time="0.04">
+  <properties/>
+  <testcase name="invoke calls repository and returns result" classname="com.subscription.poc.domain.usecase.GetActiveSubscriptionsUseCaseTest" time="0.037"/>
+  <testcase name="invoke returns failure when repository fails" classname="com.subscription.poc.domain.usecase.GetActiveSubscriptionsUseCaseTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

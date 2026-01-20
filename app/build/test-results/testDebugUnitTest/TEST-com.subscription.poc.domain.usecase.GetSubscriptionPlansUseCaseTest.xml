@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.subscription.poc.domain.usecase.GetSubscriptionPlansUseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-01-20T12:58:53.687Z" hostname="Mac-mini-de-Nicolas-Martino.local" time="0.004">
+  <properties/>
+  <testcase name="invoke should return failure when repository fails" classname="com.subscription.poc.domain.usecase.GetSubscriptionPlansUseCaseTest" time="0.002"/>
+  <testcase name="invoke should return subscription plans from repository" classname="com.subscription.poc.domain.usecase.GetSubscriptionPlansUseCaseTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

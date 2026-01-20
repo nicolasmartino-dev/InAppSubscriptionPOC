@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.subscription.poc.app-debug-62:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.subscription.poc.app-main-64:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.subscription.poc.app-debug-62:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.subscription.poc.app-main-64:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.subscription.poc.app-debug-62:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.subscription.poc.app-main-64:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.subscription.poc.presentation.subscription.components.SubscriptionCardTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-01-20T12:59:00.754Z" hostname="Mac-mini-de-Nicolas-Martino.local" time="0.129">
+  <properties/>
+  <testcase name="subscriptionCard_showsActiveBadge_whenActive" classname="com.subscription.poc.presentation.subscription.components.SubscriptionCardTest" time="0.035"/>
+  <testcase name="subscriptionCard_displaysDetails" classname="com.subscription.poc.presentation.subscription.components.SubscriptionCardTest" time="0.033"/>
+  <testcase name="subscriptionCard_triggersOnClick" classname="com.subscription.poc.presentation.subscription.components.SubscriptionCardTest" time="0.035"/>
+  <testcase name="subscriptionCard_showsPurchasingState" classname="com.subscription.poc.presentation.subscription.components.SubscriptionCardTest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

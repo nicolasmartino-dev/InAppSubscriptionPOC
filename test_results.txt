@@ -1,0 +1,495 @@
+Initialized native services in: /Users/nmartino/.gradle/native
+Initialized jansi services in: /Users/nmartino/.gradle/native
+Found daemon DaemonInfo{pid=18219, address=[aa880bd1-8b67-445c-9f85-f407a2946d32 port:52817, addresses:[/127.0.0.1]], state=Idle, lastBusy=1768841611857, context=DefaultDaemonContext[uid=99dcdf9c-b116-4e03-8b09-10b5ca5b450e,javaHome=/Applications/Android Studio.app/Contents/jbr/Contents/Home,javaVersion=21,javaVendor=JetBrains s.r.o.,daemonRegistryDir=/Users/nmartino/.gradle/daemon,pid=18219,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=FR,-Duser.language=fr,-Duser.variant]} however its context does not match the desired criteria.
+JVM is incompatible.
+Wanted: DaemonRequestContext{jvmCriteria=/opt/homebrew/Cellar/openjdk@17/17.0.16/libexec/openjdk.jdk/Contents/Home (no JDK specified, using current Java home), daemonOpts=[-Xmx2048m, -Dfile.encoding=UTF-8, -Duser.country=FR, -Duser.language=fr, -Duser.variant], applyInstrumentationAgent=true, nativeServicesMode=ENABLED, priority=NORMAL}
+Actual: DefaultDaemonContext[uid=99dcdf9c-b116-4e03-8b09-10b5ca5b450e,javaHome=/Applications/Android Studio.app/Contents/jbr/Contents/Home,javaVersion=21,javaVendor=JetBrains s.r.o.,daemonRegistryDir=/Users/nmartino/.gradle/daemon,pid=18219,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=FR,-Duser.language=fr,-Duser.variant]
+
+  Looking for a different daemon...
+The client will now receive all logging from the daemon (pid: 18461). The daemon log file: /Users/nmartino/.gradle/daemon/8.13/daemon-18461.out.log
+Starting 17th build in daemon [uptime: 1 hrs 32 mins 3.518 secs, performance: 100%, GC rate: 0.00/s, heap usage: 2% of 2 GiB]
+Using 10 worker leases.
+Configuration on demand is an incubating feature.
+Now considering [/Users/nmartino/Documents/InAppSubscriptionPOC] as hierarchies to watch
+Reusing configuration cache.
+Now considering [/Users/nmartino/Documents/InAppSubscriptionPOC] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Using local directory build cache for the root build (location = /Users/nmartino/.gradle/caches/build-cache-1, remove unused entries = after 7 days).
+Tasks to be executed: [task ':app:preBuild', task ':app:preDebugBuild', task ':app:checkKotlinGradlePluginConfigurationErrors', task ':app:checkDebugAarMetadata', task ':app:processDebugNavigationResources', task ':app:compileDebugNavigationResources', task ':app:generateDebugResValues', task ':app:mapDebugSourceSetPaths', task ':app:generateDebugResources', task ':app:mergeDebugResources', task ':app:packageDebugResources', task ':app:parseDebugLocalResources', task ':app:createDebugCompatibleScreenManifests', task ':app:extractDeepLinksDebug', task ':app:processDebugMainManifest', task ':app:processDebugManifest', task ':app:processDebugManifestForPackage', task ':app:processDebugResources', task ':app:kspDebugKotlin', task ':app:compileDebugKotlin', task ':app:javaPreCompileDebug', task ':app:compileDebugJavaWithJavac', task ':app:hiltAggregateDepsDebug', task ':app:hiltJavaCompileDebug', task ':app:transformDebugClassesWithAsm', task ':app:bundleDebugClassesToRuntimeJar', task ':app:mergeDebugShaders', task ':app:compileDebugShaders', task ':app:generateDebugAssets', task ':app:mergeDebugAssets', task ':app:preDebugUnitTestBuild', task ':app:packageDebugUnitTestForUnitTest', task ':app:processDebugUnitTestManifest', task ':app:generateDebugUnitTestConfig', task ':app:processDebugJavaRes', task ':app:bundleDebugClassesToCompileJar', task ':app:kspDebugUnitTestKotlin', task ':app:compileDebugUnitTestKotlin', task ':app:javaPreCompileDebugUnitTest', task ':app:compileDebugUnitTestJavaWithJavac', task ':app:hiltAggregateDepsDebugUnitTest', task ':app:hiltJavaCompileDebugUnitTest', task ':app:processDebugUnitTestJavaRes', task ':app:transformDebugUnitTestClassesWithAsm', task ':app:testDebugUnitTest']
+Tasks that were excluded: []
+Resolve mutations for :app:preBuild (Thread[Execution worker,5,main]) started.
+Resolve mutations for :app:checkKotlinGradlePluginConfigurationErrors (Thread[Execution worker Thread 2,5,main]) started.
+:app:preBuild (Thread[Execution worker,5,main]) started.
+work action Unknown value (Thread[Execution worker Thread 3,5,main]) started.
+work action Unknown value (Thread[Execution worker Thread 4,5,main]) started.
+:app:checkKotlinGradlePluginConfigurationErrors (Thread[Execution worker Thread 2,5,main]) started.
+work action Unknown value (Thread[Execution worker Thread 4,5,main]) started.
+
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':app:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+
+> Task :app:preBuild UP-TO-DATE
+Skipping task ':app:preBuild' as it has no actions.
+Resolve mutations for :app:preDebugBuild (Thread[Execution worker,5,main]) started.
+Resolve mutations for :app:preDebugUnitTestBuild (Thread[Execution worker Thread 2,5,main]) started.
+:app:preDebugBuild (Thread[Execution worker,5,main]) started.
+:app:preDebugUnitTestBuild (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :app:preDebugBuild UP-TO-DATE
+Skipping task ':app:preDebugBuild' as it has no actions.
+
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+Skipping task ':app:preDebugUnitTestBuild' as it has no actions.
+Resolve mutations for :app:checkDebugAarMetadata (Thread[Execution worker,5,main]) started.
+Resolve mutations for :app:processDebugNavigationResources (Thread[Execution worker Thread 3,5,main]) started.
+Resolve mutations for :app:generateDebugResValues (Thread[Execution worker Thread 2,5,main]) started.
+Resolve mutations for :app:javaPreCompileDebug (Thread[Execution worker Thread 8,5,main]) started.
+Resolve mutations for :app:createDebugCompatibleScreenManifests (Thread[Execution worker Thread 9,5,main]) started.
+:app:checkDebugAarMetadata (Thread[Execution worker,5,main]) started.
+:app:processDebugNavigationResources (Thread[Execution worker Thread 3,5,main]) started.
+:app:generateDebugResValues (Thread[Execution worker Thread 4,5,main]) started.
+Resolve mutations for :app:javaPreCompileDebugUnitTest (Thread[Execution worker Thread 5,5,main]) started.
+:app:javaPreCompileDebug (Thread[Execution worker Thread 8,5,main]) started.
+:app:createDebugCompatibleScreenManifests (Thread[Execution worker Thread 9,5,main]) started.
+Resolve mutations for :app:mergeDebugShaders (Thread[Execution worker Thread 7,5,main]) started.
+:app:javaPreCompileDebugUnitTest (Thread[Execution worker Thread 5,5,main]) started.
+:app:mergeDebugShaders (Thread[Execution worker Thread 7,5,main]) started.
+
+> Task :app:generateDebugResValues UP-TO-DATE
+Build cache key for task ':app:generateDebugResValues' is 0fb7014a30dbd50c9cde1e74eb092078
+Skipping task ':app:generateDebugResValues' as it is up-to-date.
+
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+Caching disabled for task ':app:createDebugCompatibleScreenManifests' because:
+  Caching has been disabled for the task
+Skipping task ':app:createDebugCompatibleScreenManifests' as it is up-to-date.
+Resolve mutations for :app:mapDebugSourceSetPaths (Thread[Execution worker Thread 4,5,main]) started.
+Resolve mutations for :app:generateDebugResources (Thread[Execution worker Thread 2,5,main]) started.
+Resolve mutations for :app:extractDeepLinksDebug (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:javaPreCompileDebug UP-TO-DATE
+Build cache key for task ':app:javaPreCompileDebug' is 8dd1a41efe9f99ba4951081288acdbd6
+Skipping task ':app:javaPreCompileDebug' as it is up-to-date.
+:app:mapDebugSourceSetPaths (Thread[Execution worker Thread 4,5,main]) started.
+:app:extractDeepLinksDebug (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+Build cache key for task ':app:javaPreCompileDebugUnitTest' is ccd5d793c97df9fdf246b487b7f88c83
+Skipping task ':app:javaPreCompileDebugUnitTest' as it is up-to-date.
+:app:generateDebugResources (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :app:mergeDebugShaders UP-TO-DATE
+Caching disabled for task ':app:mergeDebugShaders' because:
+  Simple merging task
+Skipping task ':app:mergeDebugShaders' as it is up-to-date.
+Resolve mutations for :app:compileDebugShaders (Thread[Execution worker Thread 7,5,main]) started.
+:app:compileDebugShaders (Thread[Execution worker Thread 7,5,main]) started.
+
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+Build cache key for task ':app:extractDeepLinksDebug' is 7340805f26badfeb17b5029ab61fae4b
+Skipping task ':app:extractDeepLinksDebug' as it is up-to-date.
+Resolve mutations for :app:processDebugMainManifest (Thread[Execution worker Thread 6,5,main]) started.
+:app:processDebugMainManifest (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:generateDebugResources UP-TO-DATE
+Build cache key for task ':app:generateDebugResources' is de147128ed7834d76f7a062a78df6406
+Skipping task ':app:generateDebugResources' as it is up-to-date.
+work action resolve navigation.json (project :app) (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:compileDebugShaders NO-SOURCE
+Skipping task ':app:compileDebugShaders' as it has no source files and no previous output files.
+Resolve mutations for :app:mergeDebugResources (Thread[Execution worker Thread 2,5,main]) started.
+Resolve mutations for :app:generateDebugAssets (Thread[included builds,5,main]) started.
+:app:generateDebugAssets (Thread[included builds,5,main]) started.
+
+> Task :app:generateDebugAssets UP-TO-DATE
+Skipping task ':app:generateDebugAssets' as it has no actions.
+Resolve mutations for :app:mergeDebugAssets (Thread[included builds,5,main]) started.
+Resolve mutations for :app:packageDebugResources (Thread[Execution worker Thread 7,5,main]) started.
+:app:mergeDebugAssets (Thread[included builds,5,main]) started.
+:app:mergeDebugResources (Thread[Execution worker Thread 2,5,main]) started.
+:app:packageDebugResources (Thread[Execution worker Thread 7,5,main]) started.
+
+> Task :app:packageDebugResources UP-TO-DATE
+Build cache key for task ':app:packageDebugResources' is 9ddb3c85d4b41d793e2e6596ab2efad7
+Skipping task ':app:packageDebugResources' as it is up-to-date.
+
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+Caching disabled for task ':app:checkDebugAarMetadata' because:
+  Caching has been disabled for the task
+Skipping task ':app:checkDebugAarMetadata' as it is up-to-date.
+
+> Task :app:processDebugNavigationResources UP-TO-DATE
+Build cache key for task ':app:processDebugNavigationResources' is bcddd56cae7ec6fae1ff82e8acab48be
+Skipping task ':app:processDebugNavigationResources' as it is up-to-date.
+Resolve mutations for :app:compileDebugNavigationResources (Thread[Execution worker Thread 3,5,main]) started.
+Resolve mutations for :app:parseDebugLocalResources (Thread[Execution worker,5,main]) started.
+:app:compileDebugNavigationResources (Thread[Execution worker Thread 3,5,main]) started.
+:app:parseDebugLocalResources (Thread[Execution worker,5,main]) started.
+
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+Caching disabled for task ':app:mapDebugSourceSetPaths' because:
+  Caching has been disabled for the task
+Skipping task ':app:mapDebugSourceSetPaths' as it is up-to-date.
+
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+Build cache key for task ':app:compileDebugNavigationResources' is 69a878c1f97a1c34fffadbae157cefa7
+Skipping task ':app:compileDebugNavigationResources' as it is up-to-date.
+
+> Task :app:mergeDebugAssets UP-TO-DATE
+Caching disabled for task ':app:mergeDebugAssets' because:
+  Simple merging task
+Skipping task ':app:mergeDebugAssets' as it is up-to-date.
+
+> Task :app:mergeDebugResources UP-TO-DATE
+Build cache key for task ':app:mergeDebugResources' is 5d69f8de7ec97d58de5de40724f87e1b
+Skipping task ':app:mergeDebugResources' as it is up-to-date.
+
+> Task :app:parseDebugLocalResources UP-TO-DATE
+Build cache key for task ':app:parseDebugLocalResources' is 0a67af2eb73ba02aa69f2c054391455c
+Skipping task ':app:parseDebugLocalResources' as it is up-to-date.
+
+> Task :app:processDebugMainManifest UP-TO-DATE
+Build cache key for task ':app:processDebugMainManifest' is 51dbb5948622a808649ecbfc848e1a1f
+Skipping task ':app:processDebugMainManifest' as it is up-to-date.
+Resolve mutations for :app:processDebugManifest (Thread[Execution worker Thread 6,5,main]) started.
+Resolve mutations for :app:processDebugUnitTestManifest (Thread[Execution worker,5,main]) started.
+:app:processDebugManifest (Thread[Execution worker Thread 6,5,main]) started.
+:app:processDebugUnitTestManifest (Thread[Execution worker,5,main]) started.
+
+> Task :app:processDebugManifest UP-TO-DATE
+Build cache key for task ':app:processDebugManifest' is b763f6574123959aa832baba65ed0cbf
+Skipping task ':app:processDebugManifest' as it is up-to-date.
+Resolve mutations for :app:processDebugManifestForPackage (Thread[Execution worker Thread 6,5,main]) started.
+:app:processDebugManifestForPackage (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+Build cache key for task ':app:processDebugManifestForPackage' is 4f4716fc08f034acb75f82581ecaa3d1
+Skipping task ':app:processDebugManifestForPackage' as it is up-to-date.
+Resolve mutations for :app:processDebugResources (Thread[Execution worker Thread 6,5,main]) started.
+:app:processDebugResources (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:processDebugUnitTestManifest UP-TO-DATE
+Caching disabled for task ':app:processDebugUnitTestManifest' because:
+  Caching has been disabled for the task
+Skipping task ':app:processDebugUnitTestManifest' as it is up-to-date.
+
+> Task :app:processDebugResources UP-TO-DATE
+Build cache key for task ':app:processDebugResources' is e5ae9278522fc840b8363a54afce07aa
+Skipping task ':app:processDebugResources' as it is up-to-date.
+Resolve mutations for :app:kspDebugKotlin (Thread[Execution worker Thread 6,5,main]) started.
+Resolve mutations for :app:packageDebugUnitTestForUnitTest (Thread[Execution worker,5,main]) started.
+:app:packageDebugUnitTestForUnitTest (Thread[Execution worker,5,main]) started.
+:app:kspDebugKotlin (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:packageDebugUnitTestForUnitTest UP-TO-DATE
+Caching disabled for task ':app:packageDebugUnitTestForUnitTest' because:
+  Simple merging task
+Skipping task ':app:packageDebugUnitTestForUnitTest' as it is up-to-date.
+Resolve mutations for :app:generateDebugUnitTestConfig (Thread[Execution worker,5,main]) started.
+:app:generateDebugUnitTestConfig (Thread[Execution worker,5,main]) started.
+
+> Task :app:generateDebugUnitTestConfig UP-TO-DATE
+Caching disabled for task ':app:generateDebugUnitTestConfig' because:
+  Caching has been disabled for the task
+Skipping task ':app:generateDebugUnitTestConfig' as it is up-to-date.
+
+> Task :app:kspDebugKotlin UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debug/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debug/java', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/main/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debug/java', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debug/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debug/java', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/main/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debug/java', not found
+Build cache key for task ':app:kspDebugKotlin' is 79692844ef3300647efd940641bb6453
+Skipping task ':app:kspDebugKotlin' as it is up-to-date.
+Resolve mutations for :app:compileDebugKotlin (Thread[Execution worker Thread 6,5,main]) started.
+:app:compileDebugKotlin (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:compileDebugKotlin UP-TO-DATE
+Build cache key for task ':app:compileDebugKotlin' is ec05b667bb18128848aeba107d9b363f
+Skipping task ':app:compileDebugKotlin' as it is up-to-date.
+Resolve mutations for :app:compileDebugJavaWithJavac (Thread[Execution worker Thread 6,5,main]) started.
+:app:compileDebugJavaWithJavac (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+Build cache key for task ':app:compileDebugJavaWithJavac' is 1888679f87f2dad732b57168a5c2d587
+Skipping task ':app:compileDebugJavaWithJavac' as it is up-to-date.
+No compile result for :app:compileDebugJavaWithJavac
+No compile result for :app:compileDebugJavaWithJavac
+Resolve mutations for :app:hiltAggregateDepsDebug (Thread[Execution worker Thread 6,5,main]) started.
+:app:hiltAggregateDepsDebug (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:hiltAggregateDepsDebug UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+Build cache key for task ':app:hiltAggregateDepsDebug' is 3b62b1721ac947d65bddf5f645812f4a
+Skipping task ':app:hiltAggregateDepsDebug' as it is up-to-date.
+Resolve mutations for :app:hiltJavaCompileDebug (Thread[Execution worker Thread 6,5,main]) started.
+:app:hiltJavaCompileDebug (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:hiltJavaCompileDebug UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+Build cache key for task ':app:hiltJavaCompileDebug' is a082612aea0b82b3026487d1d3a34f40
+Skipping task ':app:hiltJavaCompileDebug' as it is up-to-date.
+No compile result for :app:hiltJavaCompileDebug
+No compile result for :app:hiltJavaCompileDebug
+Resolve mutations for :app:transformDebugClassesWithAsm (Thread[Execution worker Thread 6,5,main]) started.
+Resolve mutations for :app:processDebugJavaRes (Thread[Execution worker Thread 7,5,main]) started.
+Resolve mutations for :app:bundleDebugClassesToCompileJar (Thread[Execution worker,5,main]) started.
+:app:processDebugJavaRes (Thread[Execution worker,5,main]) started.
+:app:bundleDebugClassesToCompileJar (Thread[Execution worker Thread 2,5,main]) started.
+:app:transformDebugClassesWithAsm (Thread[Execution worker Thread 4,5,main]) started.
+
+> Task :app:bundleDebugClassesToCompileJar UP-TO-DATE
+Caching disabled for task ':app:bundleDebugClassesToCompileJar' because:
+  Caching has been disabled for the task
+Skipping task ':app:bundleDebugClassesToCompileJar' as it is up-to-date.
+work action resolve classes.jar (project :app) (Thread[Execution worker Thread 2,5,main]) started.
+Resolve mutations for :app:kspDebugUnitTestKotlin (Thread[Execution worker Thread 2,5,main]) started.
+:app:kspDebugUnitTestKotlin (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :app:processDebugJavaRes UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/main/resources', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debug/resources', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/main/resources', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debug/resources', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+Caching disabled for task ':app:processDebugJavaRes' because:
+  Caching has been disabled for the task
+Skipping task ':app:processDebugJavaRes' as it is up-to-date.
+work action resolve out (project :app) (Thread[Execution worker,5,main]) started.
+
+> Task :app:transformDebugClassesWithAsm UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debug/classes', not found
+Build cache key for task ':app:transformDebugClassesWithAsm' is c580ef1068a108dc97b25679ae7b94e4
+Skipping task ':app:transformDebugClassesWithAsm' as it is up-to-date.
+Resolve mutations for :app:bundleDebugClassesToRuntimeJar (Thread[Execution worker Thread 4,5,main]) started.
+:app:bundleDebugClassesToRuntimeJar (Thread[Execution worker Thread 4,5,main]) started.
+
+> Task :app:bundleDebugClassesToRuntimeJar UP-TO-DATE
+Caching disabled for task ':app:bundleDebugClassesToRuntimeJar' because:
+  Caching has been disabled for the task
+Skipping task ':app:bundleDebugClassesToRuntimeJar' as it is up-to-date.
+work action resolve classes.jar (project :app) (Thread[Execution worker Thread 4,5,main]) started.
+IdentityTransform (Thread[Execution worker Thread 4,5,main]) started.
+CopyTransform (Thread[Execution worker Thread 4,5,main]) started.
+AggregatedPackagesTransform (Thread[Execution worker Thread 4,5,main]) started.
+
+> Task :app:kspDebugUnitTestKotlin UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debugUnitTest/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/test/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/java', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/java', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/debugUnitTest/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/test/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/kotlin', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/java', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/java', not found
+Build cache key for task ':app:kspDebugUnitTestKotlin' is 57d0aaba64c674e8b93881c6db07153d
+Skipping task ':app:kspDebugUnitTestKotlin' as it is up-to-date.
+Resolve mutations for :app:compileDebugUnitTestKotlin (Thread[Execution worker Thread 2,5,main]) started.
+:app:compileDebugUnitTestKotlin (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :app:compileDebugUnitTestKotlin UP-TO-DATE
+Build cache key for task ':app:compileDebugUnitTestKotlin' is 96a37334dc2785c010cb09cd29570398
+Skipping task ':app:compileDebugUnitTestKotlin' as it is up-to-date.
+Resolve mutations for :app:compileDebugUnitTestJavaWithJavac (Thread[Execution worker Thread 2,5,main]) started.
+:app:compileDebugUnitTestJavaWithJavac (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+Skipping task ':app:compileDebugUnitTestJavaWithJavac' as it has no source files and no previous output files.
+Resolve mutations for :app:hiltAggregateDepsDebugUnitTest (Thread[Execution worker Thread 2,5,main]) started.
+:app:hiltAggregateDepsDebugUnitTest (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :app:hiltAggregateDepsDebugUnitTest UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debugUnitTest/classes', not found
+Build cache key for task ':app:hiltAggregateDepsDebugUnitTest' is 12dfd72f8ca180bfb120298982c854c1
+Skipping task ':app:hiltAggregateDepsDebugUnitTest' as it is up-to-date.
+Resolve mutations for :app:hiltJavaCompileDebugUnitTest (Thread[Execution worker Thread 2,5,main]) started.
+:app:hiltJavaCompileDebugUnitTest (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :app:hiltJavaCompileDebugUnitTest NO-SOURCE
+Skipping task ':app:hiltJavaCompileDebugUnitTest' as it has no source files and no previous output files.
+Resolve mutations for :app:processDebugUnitTestJavaRes (Thread[Execution worker Thread 2,5,main]) started.
+Resolve mutations for :app:transformDebugUnitTestClassesWithAsm (Thread[Execution worker Thread 9,5,main]) started.
+:app:processDebugUnitTestJavaRes (Thread[Execution worker Thread 2,5,main]) started.
+:app:transformDebugUnitTestClassesWithAsm (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/test/resources', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/resources', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debugUnitTest/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debugUnitTest/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/test/resources', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/resources', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debugUnitTest/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debugUnitTest/classes', not found
+Caching disabled for task ':app:processDebugUnitTestJavaRes' because:
+  Caching has been disabled for the task
+Skipping task ':app:processDebugUnitTestJavaRes' as it is up-to-date.
+
+> Task :app:transformDebugUnitTestClassesWithAsm UP-TO-DATE
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debugUnitTest/classes', not found
+file or directory '/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/generated/ksp/debugUnitTest/classes', not found
+Build cache key for task ':app:transformDebugUnitTestClassesWithAsm' is 1c36e99ff7021e91baf9ca8ebb8faaf2
+Skipping task ':app:transformDebugUnitTestClassesWithAsm' as it is up-to-date.
+Resolve mutations for :app:testDebugUnitTest (Thread[Execution worker Thread 3,5,main]) started.
+:app:testDebugUnitTest (Thread[Execution worker Thread 3,5,main]) started.
+Gradle Test Executor 7 started executing tests.
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :app:testDebugUnitTest
+Build cache key for task ':app:testDebugUnitTest' is e01d2d403d80f00627c63280d3199d07
+Task ':app:testDebugUnitTest' is not up-to-date because:
+  Task has failed previously.
+Starting process 'Gradle Test Executor 7'. Working directory: /Users/nmartino/Documents/InAppSubscriptionPOC/app Command: /opt/homebrew/Cellar/openjdk@17/17.0.16/libexec/openjdk.jdk/Contents/Home/bin/java -Djava.awt.headless=true -Djava.library.path=/Users/nmartino/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.:/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/testDebug/jniLibs:/Users/nmartino/Documents/InAppSubscriptionPOC/app/src/test/jniLibs -Dorg.gradle.internal.worker.tmpdir=/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/tmp/testDebugUnitTest/work --add-opens=java.base/java.io=ALL-UNNAMED -javaagent:/Users/nmartino/Documents/InAppSubscriptionPOC/app/build/tmp/.cache/expanded/zip_cde35f471dab581134460fc9a50e2c59/jacocoagent.jar=destfile=build/outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec,append=true,excludes=jdk.internal.*,inclnolocationclasses=true,dumponexit=true,output=file,jmx=false @/Users/nmartino/.gradle/.tmp/gradle-worker-classpath10562684135871449492txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=FR -Duser.language=fr -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 7'
+Successfully started process 'Gradle Test Executor 7'
+
+SubscriptionRepositoryImplTest > getSubscriptionPlans returns mock plans when all products unknown FAILED
+    java.lang.AssertionError: expected:<3> but was:<0>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$getSubscriptionPlans returns mock plans when all products unknown$1.invokeSuspend(SubscriptionRepositoryImplTest.kt:106)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$getSubscriptionPlans returns mock plans when all products unknown$1.invoke(SubscriptionRepositoryImplTest.kt)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$getSubscriptionPlans returns mock plans when all products unknown$1.invoke(SubscriptionRepositoryImplTest.kt)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$1.invokeSuspend(TestBuilders.kt:318)
+        at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+        at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+        at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
+        at kotlinx.coroutines.test.TestCoroutineScheduler.tryRunNextTaskUnless$kotlinx_coroutines_test(TestCoroutineScheduler.kt:99)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$workRunner$1.invokeSuspend(TestBuilders.kt:327)
+        at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+        at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+        at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+        at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:95)
+        at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:69)
+        at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+        at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:47)
+        at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)
+        at kotlinx.coroutines.test.TestBuildersJvmKt.createTestResult(TestBuildersJvm.kt:10)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:310)
+        at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(Unknown Source)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:168)
+        at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(Unknown Source)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0$default(TestBuilders.kt:160)
+        at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0$default(Unknown Source)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImplTest.getSubscriptionPlans returns mock plans when all products unknown(SubscriptionRepositoryImplTest.kt:92)
+
+SubscriptionRepositoryImplTest > purchaseSubscription passes oldPurchaseToken when active subscription exists FAILED
+    io.mockk.MockKException: no answer found for PricingPhase(#35).getBillingPeriod() among the configured answers: (PricingPhase(#35).getFormattedPrice())
+    PricingPhase(#35).getPriceAmountMicros())
+    PricingPhase(#35).getPriceCurrencyCode()))
+        at app//io.mockk.impl.stub.MockKStub.defaultAnswer(MockKStub.kt:93)
+        at app//io.mockk.impl.stub.MockKStub.answer(MockKStub.kt:44)
+        at app//io.mockk.impl.recording.states.AnsweringState.call(AnsweringState.kt:16)
+        at app//io.mockk.impl.recording.CommonCallRecorder.call(CommonCallRecorder.kt:53)
+        at app//io.mockk.impl.stub.MockKStub.handleInvocation(MockKStub.kt:271)
+        at app//io.mockk.impl.instantiation.JvmMockFactoryHelper$mockHandler$1.invocation(JvmMockFactoryHelper.kt:25)
+        at app//io.mockk.proxy.jvm.advice.Interceptor.call(Interceptor.kt:21)
+        at app//com.android.billingclient.api.ProductDetails$PricingPhase.getBillingPeriod(com.android.billingclient:billing@@7.1.1)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImpl.mapOffer(SubscriptionRepositoryImpl.kt:136)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImpl.access$mapOffer(SubscriptionRepositoryImpl.kt:17)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImpl$getSubscriptionPlans$2.invokeSuspend(SubscriptionRepositoryImpl.kt:56)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImpl$getSubscriptionPlans$2.invoke(SubscriptionRepositoryImpl.kt)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImpl$getSubscriptionPlans$2.invoke(SubscriptionRepositoryImpl.kt)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImpl.runWithRetry-0E7RQCE(SubscriptionRepositoryImpl.kt:40)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImpl.getSubscriptionPlans-IoAF18A(SubscriptionRepositoryImpl.kt:51)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$purchaseSubscription passes oldPurchaseToken when active subscription exists$1.invokeSuspend(SubscriptionRepositoryImplTest.kt:139)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$purchaseSubscription passes oldPurchaseToken when active subscription exists$1.invoke(SubscriptionRepositoryImplTest.kt)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$purchaseSubscription passes oldPurchaseToken when active subscription exists$1.invoke(SubscriptionRepositoryImplTest.kt)
+        at app//kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$1.invokeSuspend(TestBuilders.kt:318)
+        at app//kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+        at app//kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+        at app//kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
+        at app//kotlinx.coroutines.test.TestCoroutineScheduler.tryRunNextTaskUnless$kotlinx_coroutines_test(TestCoroutineScheduler.kt:99)
+        at app//kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$workRunner$1.invokeSuspend(TestBuilders.kt:327)
+        at app//kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+        at app//kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+        at app//kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+        at app//kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:95)
+        at app//kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:69)
+        at app//kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+        at app//kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:47)
+        at app//kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)
+        at app//kotlinx.coroutines.test.TestBuildersJvmKt.createTestResult(TestBuildersJvm.kt:10)
+        at app//kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:310)
+        at app//kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(Unknown Source)
+        at app//kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:168)
+        at app//kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(Unknown Source)
+        at app//kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0$default(TestBuilders.kt:160)
+        at app//kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0$default(Unknown Source)
+        at app//com.subscription.poc.data.repository.SubscriptionRepositoryImplTest.purchaseSubscription passes oldPurchaseToken when active subscription exists(SubscriptionRepositoryImplTest.kt:111)
+
+SubscriptionRepositoryImplTest > getActiveSubscriptions attempts to reconnect if not ready FAILED
+    java.lang.ClassCastException: class java.lang.Object cannot be cast to class java.util.List (java.lang.Object and java.util.List are in module java.base of loader 'bootstrap')
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImpl.handleEmptyPurchases(SubscriptionRepositoryImpl.kt:77)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImpl.access$handleEmptyPurchases(SubscriptionRepositoryImpl.kt:17)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImpl$getActiveSubscriptions$2.invokeSuspend(SubscriptionRepositoryImpl.kt:68)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImpl$getActiveSubscriptions$2.invoke(SubscriptionRepositoryImpl.kt)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImpl$getActiveSubscriptions$2.invoke(SubscriptionRepositoryImpl.kt)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImpl.runWithRetry-0E7RQCE(SubscriptionRepositoryImpl.kt:40)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImpl.runWithRetry-0E7RQCE$default(SubscriptionRepositoryImpl.kt:33)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImpl.getActiveSubscriptions-IoAF18A(SubscriptionRepositoryImpl.kt:63)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$getActiveSubscriptions attempts to reconnect if not ready$1.invokeSuspend(SubscriptionRepositoryImplTest.kt:260)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$getActiveSubscriptions attempts to reconnect if not ready$1.invoke(SubscriptionRepositoryImplTest.kt)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImplTest$getActiveSubscriptions attempts to reconnect if not ready$1.invoke(SubscriptionRepositoryImplTest.kt)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$1.invokeSuspend(TestBuilders.kt:318)
+        at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+        at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+        at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
+        at kotlinx.coroutines.test.TestCoroutineScheduler.tryRunNextTaskUnless$kotlinx_coroutines_test(TestCoroutineScheduler.kt:99)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$workRunner$1.invokeSuspend(TestBuilders.kt:327)
+        at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+        at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+        at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+        at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:95)
+        at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:69)
+        at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+        at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:47)
+        at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)
+        at kotlinx.coroutines.test.TestBuildersJvmKt.createTestResult(TestBuildersJvm.kt:10)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:310)
+        at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(Unknown Source)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:168)
+        at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(Unknown Source)
+        at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0$default(TestBuilders.kt:160)
+        at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0$default(Unknown Source)
+        at com.subscription.poc.data.repository.SubscriptionRepositoryImplTest.getActiveSubscriptions attempts to reconnect if not ready(SubscriptionRepositoryImplTest.kt:253)
+
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Gradle Test Executor 7 finished executing tests.
+
+> Task :app:testDebugUnitTest FAILED
+
+44 tests completed, 3 failed
+Finished generating test XML results (0.002 secs) into: /Users/nmartino/Documents/InAppSubscriptionPOC/app/build/test-results/testDebugUnitTest
+Generating HTML test report...
+Finished generating test html results (0.003 secs) into: /Users/nmartino/Documents/InAppSubscriptionPOC/app/build/reports/tests/testDebugUnitTest
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testDebugUnitTest'.
+> There were failing tests. See the report at: file:///Users/nmartino/Documents/InAppSubscriptionPOC/app/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 10s
+37 actionable tasks: 1 executed, 36 up-to-date
+Watched directory hierarchies: [/Users/nmartino/Documents/InAppSubscriptionPOC]
+Configuration cache entry reused.

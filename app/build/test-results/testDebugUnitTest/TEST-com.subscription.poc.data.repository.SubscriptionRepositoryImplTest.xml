@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-01-20T12:58:53.356Z" hostname="Mac-mini-de-Nicolas-Martino.local" time="0.289">
+  <properties/>
+  <testcase name="getSubscriptionPlans returns mock plans when wrapper fails" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.082"/>
+  <testcase name="mapPurchase uses pendingPlanId when savedId is null" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.126"/>
+  <testcase name="saveLastSelectedPlanId should delegate to SharedPreferences" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.019"/>
+  <testcase name="getSubscriptionPlans returns mock plans when all products unknown" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.005"/>
+  <testcase name="getActiveSubscriptions returns mapped plans on success" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.022"/>
+  <testcase name="purchaseSubscription passes oldPurchaseToken when active subscription exists" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.014"/>
+  <testcase name="startConnection and endConnection should delegate to wrapper" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.006"/>
+  <testcase name="getSubscriptionPlans returns mapped plans on success" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.007"/>
+  <testcase name="getActiveSubscriptions returns failure on query error" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.003"/>
+  <testcase name="getActiveSubscriptions attempts to reconnect if not ready" classname="com.subscription.poc.data.repository.SubscriptionRepositoryImplTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

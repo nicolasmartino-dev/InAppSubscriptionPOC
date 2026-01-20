@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.subscription.poc.domain.usecase.ManageSubscriptionUseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-01-20T12:58:53.773Z" hostname="Mac-mini-de-Nicolas-Martino.local" time="3.476">
+  <properties/>
+  <testcase name="invoke without productId starts activity with general subscriptions URL" classname="com.subscription.poc.domain.usecase.ManageSubscriptionUseCaseTest" time="3.464"/>
+  <testcase name="invoke with productId starts activity with specific SKU URL" classname="com.subscription.poc.domain.usecase.ManageSubscriptionUseCaseTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
