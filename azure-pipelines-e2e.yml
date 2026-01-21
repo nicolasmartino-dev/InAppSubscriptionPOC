@@ -1,15 +1,14 @@
-# Mobile MCP E2E Test Pipeline
-# MVP: Run a single E2E test to verify the subscription screen loads
+# Mobile MCP E2E Test Pipeline (macOS)
+# MVP: Run E2E tests using Android emulator on macOS agent
 
 trigger:
   - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macos-latest'
 
 variables:
-  ANDROID_SDK_ROOT: '/usr/local/lib/android/sdk'
-  JAVA_HOME: '/usr/lib/jvm/temurin-17-jdk-amd64'
+  ANDROID_SDK_ROOT: '$(HOME)/Library/Android/sdk'
 
 stages:
   - stage: BuildAndTest
@@ -17,7 +16,7 @@ stages:
     jobs:
       - job: E2ETest
         displayName: 'Mobile MCP E2E Test'
-        timeoutInMinutes: 30
+        timeoutInMinutes: 45
         steps:
           # Setup Java 17
           - task: JavaToolInstaller@0
@@ -27,36 +26,53 @@ stages:
               jdkArchitectureOption: 'x64'
               jdkSourceOption: 'PreInstalled'
 
-          # Setup Node.js for Mobile MCP
+          # Setup Node.js for E2E test script
           - task: NodeTool@0
             displayName: 'Setup Node.js'
             inputs:
               versionSpec: '18.x'
 
-          # Accept Android SDK licenses
+          # Install Android SDK components
           - script: |
-              yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses
-            displayName: 'Accept SDK Licenses'
-            continueOnError: true
-
-          # Install required SDK components
-          - script: |
+              # Install command line tools if needed
+              brew install --cask android-commandlinetools || true
+              
+              # Accept licenses
+              yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses || true
+              
+              # Install required components
               $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platform-tools" "emulator" "system-images;android-33;google_apis;x86_64"
-            displayName: 'Install SDK Components'
+            displayName: 'Setup Android SDK'
+            continueOnError: true
 
           # Create AVD
           - script: |
-              echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd -n test_avd -k "system-images;android-33;google_apis;x86_64" --force
+              echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd \
+                -n test_avd \
+                -k "system-images;android-33;google_apis;x86_64" \
+                --force
             displayName: 'Create AVD'
 
-          # Start Emulator
+          # Start Emulator (macOS has hardware acceleration)
           - script: |
-              nohup $ANDROID_SDK_ROOT/emulator/emulator -avd test_avd -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim -no-snapshot &
+              # Start emulator in background
+              nohup $ANDROID_SDK_ROOT/emulator/emulator \
+                -avd test_avd \
+                -no-window \
+                -no-audio \
+                -no-boot-anim \
+                -no-snapshot \
+                -gpu host \
+                &
+              
+              # Wait for device
               $ANDROID_SDK_ROOT/platform-tools/adb wait-for-device
+              
               # Wait for boot to complete
+              echo "Waiting for emulator to boot..."
               while [ "$($ANDROID_SDK_ROOT/platform-tools/adb shell getprop sys.boot_completed 2>/dev/null)" != "1" ]; do
-                echo "Waiting for emulator to boot..."
                 sleep 5
+                echo "Still waiting..."
               done
               echo "Emulator is ready!"
             displayName: 'Start Emulator'
@@ -73,20 +89,18 @@ stages:
               $ANDROID_SDK_ROOT/platform-tools/adb install app/build/outputs/apk/debug/app-debug.apk
             displayName: 'Install App on Emulator'
 
-          # Install Mobile MCP
+          # Launch app
           - script: |
-              npm install -g @anthropic/mobile-mcp
-            displayName: 'Install Mobile MCP'
-
-          # Launch app and run E2E test
-          - script: |
-              # Launch the app
               $ANDROID_SDK_ROOT/platform-tools/adb shell am start -n com.subscription.poc/.MainActivity
               sleep 5
-              
-              # Run the E2E test script
+            displayName: 'Launch App'
+
+          # Run E2E test
+          - script: |
               node $(System.DefaultWorkingDirectory)/e2e/subscription-screen-test.js
-            displayName: 'Run E2E Test with Mobile MCP'
+            displayName: 'Run E2E Test'
+            env:
+              ANDROID_SDK_ROOT: $(ANDROID_SDK_ROOT)
 
           # Capture screenshot as artifact
           - script: |
@@ -99,4 +113,10 @@ stages:
           - publish: $(Build.ArtifactStagingDirectory)/screenshots
             artifact: e2e-screenshots
             displayName: 'Publish Screenshots'
+            condition: always()
+
+          # Cleanup - stop emulator
+          - script: |
+              $ANDROID_SDK_ROOT/platform-tools/adb emu kill || true
+            displayName: 'Stop Emulator'
             condition: always()
