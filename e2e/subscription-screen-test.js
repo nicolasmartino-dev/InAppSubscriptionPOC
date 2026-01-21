@@ -70,32 +70,25 @@ async function runTest() {
             }
 
             // RECOVERY STRATEGY:
-            // If we haven't succeeded yet, try to wake things up
+            // If we haven't succeeded yet, check state and maybe nudge it
             if (!loaded && i < MAX_RETRIES - 1) {
-                console.log('   🔧 Attempting Nuclear Recovery: Enter -> Back -> Force Stop -> Restart');
 
-                // 1. Send ENTER (66) to click "Close App" or "Wait" if an ANR dialog is focused
-                try { await execPromise(`${ADB} shell input keyevent 66`); } catch (e) { }
-                await sleep(500);
+                // If we saw an ANR, try to dismiss it
+                if (outputContent.includes("isn't responding")) {
+                    console.log('   ⚠️ ANR Dialog detected, sending BACK to dismiss...');
+                    try { await execPromise(`${ADB} shell input keyevent 4`); } catch (e) { }
+                    await sleep(1000);
+                }
 
-                // 2. Send BACK (4) to dismiss any other dialogs
-                try { await execPromise(`${ADB} shell input keyevent 4`); } catch (e) { }
-                await sleep(500);
-
-                // 3. NUCLEAR OPTION: Force Stop the app to clear state
-                try {
-                    await execPromise(`${ADB} shell am force-stop com.subscription.poc`);
-                } catch (e) { }
-                await sleep(1000);
-
-                // 4. Fresh Launch
+                // Ensure app is in foreground (just in case)
+                // We DO NOT force-stop anymore, as that kills the loading process!
+                console.log('   Starting/Bringing app to front...');
                 try {
                     await execPromise(`${ADB} shell am start -n com.subscription.poc/.MainActivity`);
                 } catch (e) { }
 
-                // Wait longer after a fresh launch
-                await sleep(RETRY_DELAY + 2000);
-            } else if (!loaded && i < MAX_RETRIES - 1) {
+                // Just wait patiently
+                console.log(`   ⏳ Waiting ${RETRY_DELAY}ms for app to load...`);
                 await sleep(RETRY_DELAY);
             }
         }
