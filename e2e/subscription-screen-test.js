@@ -72,21 +72,30 @@ async function runTest() {
             // RECOVERY STRATEGY:
             // If we haven't succeeded yet, try to wake things up
             if (!loaded && i < MAX_RETRIES - 1) {
-                console.log('   🔧 Attempting recovery: Dismiss dialog + Bring app to front');
+                console.log('   🔧 Attempting Nuclear Recovery: Enter -> Back -> Force Stop -> Restart');
 
-                // 1. Send BACK to dismiss potential ANR or system dialogs
+                // 1. Send ENTER (66) to click "Close App" or "Wait" if an ANR dialog is focused
+                try { await execPromise(`${ADB} shell input keyevent 66`); } catch (e) { }
+                await sleep(500);
+
+                // 2. Send BACK (4) to dismiss any other dialogs
                 try { await execPromise(`${ADB} shell input keyevent 4`); } catch (e) { }
+                await sleep(500);
 
-                // 2. Wait a moment
+                // 3. NUCLEAR OPTION: Force Stop the app to clear state
+                try {
+                    await execPromise(`${ADB} shell am force-stop com.subscription.poc`);
+                } catch (e) { }
                 await sleep(1000);
 
-                // 3. Force app to front again (in case BACK closed it)
+                // 4. Fresh Launch
                 try {
                     await execPromise(`${ADB} shell am start -n com.subscription.poc/.MainActivity`);
                 } catch (e) { }
 
-                await sleep(RETRY_DELAY);
-            } else if (!loaded && i < MAX_RETRIES - 1) { // Original sleep for non-recovery path
+                // Wait longer after a fresh launch
+                await sleep(RETRY_DELAY + 2000);
+            } else if (!loaded && i < MAX_RETRIES - 1) {
                 await sleep(RETRY_DELAY);
             }
         }
