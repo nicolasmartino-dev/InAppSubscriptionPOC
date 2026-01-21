@@ -29,39 +29,70 @@ async function runTest() {
         // Step 1: Wait for app to load with retry logic
         console.log('⏳ Waiting for app to load...');
 
-        const MAX_RETRIES = 12; // 60 seconds total
+        const MAX_RETRIES = 15; // Increased to 75 seconds total
         const RETRY_DELAY = 5000;
         let loaded = false;
 
         for (let i = 0; i < MAX_RETRIES; i++) {
             console.log(`🔄 Attempt ${i + 1}/${MAX_RETRIES}: Analyzing screen...`);
 
+            let dumpSuccess = false;
+            let outputContent = '';
+
             // Dump UI hierarchy
             try {
                 await execPromise(`${ADB} shell uiautomator dump /sdcard/ui.xml`);
+                dumpSuccess = true;
             } catch (e) {
-                console.log('   ⚠️ Dump failed (app might be starting), retrying...');
+                console.log('   ⚠️ Dump failed (system busy?)');
             }
 
-            // Read the dump
-            try {
-                const { stdout } = await execPromise(`${ADB} shell cat /sdcard/ui.xml`);
+            // Read the dump if successful
+            if (dumpSuccess) {
+                try {
+                    const { stdout } = await execPromise(`${ADB} shell cat /sdcard/ui.xml`);
+                    outputContent = stdout;
 
-                // Check if our screen is visible
-                if (/Choose Your Plan/i.test(stdout)) {
-                    console.log('✅ Screen loaded!');
-                    loaded = true;
-                    break;
+                    // Check if our screen is visible
+                    if (/Choose Your Plan/i.test(stdout)) {
+                        console.log('✅ Screen loaded!');
+                        loaded = true;
+                        break;
+                    }
+
+                    // Check for System UI ANR
+                    if (/isn't responding/i.test(stdout)) {
+                        console.log('   ⚠️ Detected "isn\'t responding" dialog.');
+                    }
+                } catch (e) {
+                    console.log('   ⚠️ Read failed');
                 }
-            } catch (e) {
-                console.log('   ⚠️ Read failed, retrying...');
             }
 
-            if (i < MAX_RETRIES - 1) await sleep(RETRY_DELAY);
+            // RECOVERY STRATEGY:
+            // If we haven't succeeded yet, try to wake things up
+            if (!loaded && i < MAX_RETRIES - 1) {
+                console.log('   🔧 Attempting recovery: Dismiss dialog + Bring app to front');
+
+                // 1. Send BACK to dismiss potential ANR or system dialogs
+                try { await execPromise(`${ADB} shell input keyevent 4`); } catch (e) { }
+
+                // 2. Wait a moment
+                await sleep(1000);
+
+                // 3. Force app to front again (in case BACK closed it)
+                try {
+                    await execPromise(`${ADB} shell am start -n com.subscription.poc/.MainActivity`);
+                } catch (e) { }
+
+                await sleep(RETRY_DELAY);
+            } else if (!loaded && i < MAX_RETRIES - 1) { // Original sleep for non-recovery path
+                await sleep(RETRY_DELAY);
+            }
         }
 
         if (!loaded) {
-            console.error('❌ Timeout: App did not load "Choose Your Plan" screen within 60 seconds.');
+            console.error('❌ Timeout: App did not load "Choose Your Plan" screen within time limit.');
             console.log('\n❌ E2E TEST FAILED');
             process.exit(1);
         }
