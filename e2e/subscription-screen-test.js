@@ -26,13 +26,47 @@ async function runTest() {
     console.log(`📱 Using ADB: ${ADB}`);
 
     try {
-        // Step 1: Wait for app to load
+        // Step 1: Wait for app to load with retry logic
         console.log('⏳ Waiting for app to load...');
-        await sleep(3000);
 
-        // Step 2: Dump UI hierarchy to file and read it
-        console.log('📱 Analyzing screen elements...');
-        await execPromise(`${ADB} shell uiautomator dump /sdcard/ui.xml`);
+        const MAX_RETRIES = 12; // 60 seconds total
+        const RETRY_DELAY = 5000;
+        let loaded = false;
+
+        for (let i = 0; i < MAX_RETRIES; i++) {
+            console.log(`🔄 Attempt ${i + 1}/${MAX_RETRIES}: Analyzing screen...`);
+
+            // Dump UI hierarchy
+            try {
+                await execPromise(`${ADB} shell uiautomator dump /sdcard/ui.xml`);
+            } catch (e) {
+                console.log('   ⚠️ Dump failed (app might be starting), retrying...');
+            }
+
+            // Read the dump
+            try {
+                const { stdout } = await execPromise(`${ADB} shell cat /sdcard/ui.xml`);
+
+                // Check if our screen is visible
+                if (/Choose Your Plan/i.test(stdout)) {
+                    console.log('✅ Screen loaded!');
+                    loaded = true;
+                    break;
+                }
+            } catch (e) {
+                console.log('   ⚠️ Read failed, retrying...');
+            }
+
+            if (i < MAX_RETRIES - 1) await sleep(RETRY_DELAY);
+        }
+
+        if (!loaded) {
+            console.error('❌ Timeout: App did not load "Choose Your Plan" screen within 60 seconds.');
+            console.log('\n❌ E2E TEST FAILED');
+            process.exit(1);
+        }
+
+        // Step 2: Final Verification (using the last successful dump)
         const { stdout } = await execPromise(`${ADB} shell cat /sdcard/ui.xml`);
 
         // Step 3: Verify key elements are present
