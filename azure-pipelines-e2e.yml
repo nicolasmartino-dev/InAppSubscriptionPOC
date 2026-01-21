@@ -7,9 +7,6 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-variables:
-  ANDROID_SDK_ROOT: '$(HOME)/Library/Android/sdk'
-
 stages:
   - stage: BuildAndTest
     displayName: 'Build & E2E Test'
@@ -32,47 +29,91 @@ stages:
             inputs:
               versionSpec: '18.x'
 
-          # Install Android SDK components
+          # Find and setup Android SDK
           - script: |
-              # Install command line tools if needed
-              brew install --cask android-commandlinetools || true
+              echo "=== Finding Android SDK ==="
+              # Check common locations
+              if [ -d "$ANDROID_HOME" ]; then
+                echo "Found ANDROID_HOME: $ANDROID_HOME"
+                export ANDROID_SDK_ROOT="$ANDROID_HOME"
+              elif [ -d "/Users/runner/Library/Android/sdk" ]; then
+                export ANDROID_SDK_ROOT="/Users/runner/Library/Android/sdk"
+              elif [ -d "$HOME/Library/Android/sdk" ]; then
+                export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+              else
+                echo "Android SDK not found, installing..."
+                brew install --cask android-commandlinetools
+                export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+                mkdir -p "$ANDROID_SDK_ROOT"
+              fi
               
-              # Accept licenses
-              yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses || true
+              echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+              echo "##vso[task.setvariable variable=ANDROID_SDK_ROOT]$ANDROID_SDK_ROOT"
               
-              # Install required components
-              $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platform-tools" "emulator" "system-images;android-33;google_apis;x86_64"
-            displayName: 'Setup Android SDK'
+              # List SDK contents
+              ls -la "$ANDROID_SDK_ROOT" || echo "SDK directory not accessible yet"
+            displayName: 'Setup Android SDK Path'
+
+          # Accept licenses and install components
+          - script: |
+              echo "=== Installing Android SDK Components ==="
+              echo "ANDROID_SDK_ROOT: $(ANDROID_SDK_ROOT)"
+              
+              # Find sdkmanager
+              SDKMANAGER=""
+              if [ -f "$(ANDROID_SDK_ROOT)/cmdline-tools/latest/bin/sdkmanager" ]; then
+                SDKMANAGER="$(ANDROID_SDK_ROOT)/cmdline-tools/latest/bin/sdkmanager"
+              elif [ -f "$(ANDROID_SDK_ROOT)/tools/bin/sdkmanager" ]; then
+                SDKMANAGER="$(ANDROID_SDK_ROOT)/tools/bin/sdkmanager"
+              fi
+              
+              if [ -n "$SDKMANAGER" ]; then
+                echo "Using sdkmanager: $SDKMANAGER"
+                yes | $SDKMANAGER --licenses || true
+                $SDKMANAGER "platform-tools" "emulator" "system-images;android-33;google_apis;x86_64" || true
+              else
+                echo "sdkmanager not found, skipping SDK install"
+              fi
+            displayName: 'Install SDK Components'
             continueOnError: true
 
           # Create AVD
           - script: |
-              echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd \
-                -n test_avd \
-                -k "system-images;android-33;google_apis;x86_64" \
-                --force
+              echo "=== Creating AVD ==="
+              AVDMANAGER=""
+              if [ -f "$(ANDROID_SDK_ROOT)/cmdline-tools/latest/bin/avdmanager" ]; then
+                AVDMANAGER="$(ANDROID_SDK_ROOT)/cmdline-tools/latest/bin/avdmanager"
+              elif [ -f "$(ANDROID_SDK_ROOT)/tools/bin/avdmanager" ]; then
+                AVDMANAGER="$(ANDROID_SDK_ROOT)/tools/bin/avdmanager"
+              fi
+              
+              if [ -n "$AVDMANAGER" ]; then
+                echo "no" | $AVDMANAGER create avd -n test_avd -k "system-images;android-33;google_apis;x86_64" --force
+              else
+                echo "avdmanager not found!"
+                exit 1
+              fi
             displayName: 'Create AVD'
 
-          # Start Emulator (macOS has hardware acceleration)
+          # Start Emulator
           - script: |
+              echo "=== Starting Emulator ==="
+              EMULATOR="$(ANDROID_SDK_ROOT)/emulator/emulator"
+              ADB="$(ANDROID_SDK_ROOT)/platform-tools/adb"
+              
               # Start emulator in background
-              nohup $ANDROID_SDK_ROOT/emulator/emulator \
-                -avd test_avd \
-                -no-window \
-                -no-audio \
-                -no-boot-anim \
-                -no-snapshot \
-                -gpu host \
-                &
+              nohup $EMULATOR -avd test_avd -no-window -no-audio -no-boot-anim -no-snapshot -gpu swiftshader_indirect &
               
               # Wait for device
-              $ANDROID_SDK_ROOT/platform-tools/adb wait-for-device
+              $ADB wait-for-device
               
               # Wait for boot to complete
               echo "Waiting for emulator to boot..."
-              while [ "$($ANDROID_SDK_ROOT/platform-tools/adb shell getprop sys.boot_completed 2>/dev/null)" != "1" ]; do
+              BOOT_COMPLETE=""
+              while [ "$BOOT_COMPLETE" != "1" ]; do
                 sleep 5
-                echo "Still waiting..."
+                BOOT_COMPLETE=$($ADB shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+                echo "Boot status: $BOOT_COMPLETE"
               done
               echo "Emulator is ready!"
             displayName: 'Start Emulator'
@@ -86,26 +127,25 @@ stages:
 
           # Install the app
           - script: |
-              $ANDROID_SDK_ROOT/platform-tools/adb install app/build/outputs/apk/debug/app-debug.apk
+              $(ANDROID_SDK_ROOT)/platform-tools/adb install app/build/outputs/apk/debug/app-debug.apk
             displayName: 'Install App on Emulator'
 
           # Launch app
           - script: |
-              $ANDROID_SDK_ROOT/platform-tools/adb shell am start -n com.subscription.poc/.MainActivity
+              $(ANDROID_SDK_ROOT)/platform-tools/adb shell am start -n com.subscription.poc/.MainActivity
               sleep 5
             displayName: 'Launch App'
 
           # Run E2E test
           - script: |
+              export ANDROID_SDK_ROOT="$(ANDROID_SDK_ROOT)"
               node $(System.DefaultWorkingDirectory)/e2e/subscription-screen-test.js
             displayName: 'Run E2E Test'
-            env:
-              ANDROID_SDK_ROOT: $(ANDROID_SDK_ROOT)
 
           # Capture screenshot as artifact
           - script: |
               mkdir -p $(Build.ArtifactStagingDirectory)/screenshots
-              $ANDROID_SDK_ROOT/platform-tools/adb exec-out screencap -p > $(Build.ArtifactStagingDirectory)/screenshots/final_state.png
+              $(ANDROID_SDK_ROOT)/platform-tools/adb exec-out screencap -p > $(Build.ArtifactStagingDirectory)/screenshots/final_state.png || true
             displayName: 'Capture Final Screenshot'
             condition: always()
 
@@ -117,6 +157,6 @@ stages:
 
           # Cleanup - stop emulator
           - script: |
-              $ANDROID_SDK_ROOT/platform-tools/adb emu kill || true
+              $(ANDROID_SDK_ROOT)/platform-tools/adb emu kill || true
             displayName: 'Stop Emulator'
             condition: always()
