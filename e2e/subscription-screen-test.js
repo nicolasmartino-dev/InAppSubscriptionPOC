@@ -73,22 +73,41 @@ async function runTest() {
             // If we haven't succeeded yet, check state and maybe nudge it
             if (!loaded && i < MAX_RETRIES - 1) {
 
-                // If we saw an ANR, try to dismiss it
+                // If we saw an ANR, try to dismiss it by clicking "Wait"
                 if (outputContent.includes("isn't responding")) {
-                    console.log('   ⚠️ ANR Dialog detected, sending BACK to dismiss...');
-                    try { await execPromise(`${ADB} shell input keyevent 4`); } catch (e) { }
+                    console.log('   ⚠️ ANR Dialog detected.');
+
+                    // Try to find the "Wait" button coordinates in the XML dump
+                    // XML pattern: <node ... text="Wait" ... bounds="[237,1257][843,1389]" ... />
+                    const waitMatch = outputContent.match(/text="Wait".*?bounds="\[(\d+),(\d+)\]\[(\d+),(\d+)\]"/);
+
+                    if (waitMatch) {
+                        const [_, x1, y1, x2, y2] = waitMatch;
+                        const centerX = Math.floor((parseInt(x1) + parseInt(x2)) / 2);
+                        const centerY = Math.floor((parseInt(y1) + parseInt(y2)) / 2);
+
+                        console.log(`   👆 Found "Wait" button. Tapping at ${centerX},${centerY}...`);
+                        try { await execPromise(`${ADB} shell input tap ${centerX} ${centerY}`); } catch (e) { }
+                    } else {
+                        // Fallback: Try keyboard navigation (Tab -> Enter)
+                        console.log('   Warning: Could not find "Wait" button bounds. Trying generic key events...');
+                        try {
+                            await execPromise(`${ADB} shell input keyevent 61`); // TAB
+                            await sleep(500);
+                            await execPromise(`${ADB} shell input keyevent 66`); // ENTER
+                        } catch (e) { }
+                    }
                     await sleep(1000);
                 }
 
                 // Ensure app is in foreground (just in case)
-                // We DO NOT force-stop anymore, as that kills the loading process!
                 console.log('   Starting/Bringing app to front...');
                 try {
                     await execPromise(`${ADB} shell am start -n com.subscription.poc/.MainActivity`);
                 } catch (e) { }
 
                 // Just wait patiently
-                console.log(`   ⏳ Waiting ${RETRY_DELAY}ms for app to load...`);
+                console.log(`   ⏳ Waiting ${RETRY_DELAY}ms for app to reload...`);
                 await sleep(RETRY_DELAY);
             }
         }
