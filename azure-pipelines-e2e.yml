@@ -121,7 +121,7 @@ stages:
               while [ "$BOOT_COMPLETE" != "1" ]; do
                 CURRENT_TIME=$(date +%s)
                 ELAPSED=$((CURRENT_TIME - START_TIME))
-                if [ $ELAPSED -gt 600 ]; then
+                if [ $ELAPSED -gt 1200 ]; then
                     echo "Timeout waiting for emulator boot"
                     exit 1
                 fi
@@ -130,8 +130,10 @@ stages:
                 echo "Boot status: $BOOT_COMPLETE"
               done
               echo "Emulator is ready!"
+              # Give the system extra time to settle and dismiss boot dialogs
+              sleep 30
             displayName: 'Start Emulator'
-            timeoutInMinutes: 10
+            timeoutInMinutes: 20
 
           # Build the app
           - script: |
