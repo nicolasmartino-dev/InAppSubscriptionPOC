@@ -236,14 +236,11 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                                 contentPadding = PaddingValues(horizontal = 4.dp, vertical = 8.dp)
                             ) {
                                 items(uiState.subscriptionPlans) { plan ->
-                                    val isFirstPlan = uiState.subscriptionPlans.indexOf(plan) == 0
                                     Box(modifier = Modifier.width(280.dp)) {
                                         SubscriptionCard(
                                             subscriptionPlan = plan,
                                             onPurchaseClick = { activity?.let { viewModel.purchaseSubscription(it, plan.productId) } },
                                             isPurchasing = uiState.purchaseInProgress,
-                                            buttonText = if (isFirstPlan) "toto" else "Subscribe",
-                                            buttonColor = if (isFirstPlan) Color.Red else null
                                         )
                                     }
                                 }
@@ -289,7 +286,6 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                             }
 
                             items(uiState.subscriptionPlans) { plan ->
-                                val isFirstPlan = uiState.subscriptionPlans.indexOf(plan) == 0
                                 SubscriptionCard(
                                     subscriptionPlan = plan,
                                     onPurchaseClick = {
@@ -298,8 +294,6 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                                         }
                                     },
                                     isPurchasing = uiState.purchaseInProgress,
-                                    buttonText = if (isFirstPlan) "toto" else "Subscribe",
-                                    buttonColor = if (isFirstPlan) Color.Red else null
                                 )
                             }
 
