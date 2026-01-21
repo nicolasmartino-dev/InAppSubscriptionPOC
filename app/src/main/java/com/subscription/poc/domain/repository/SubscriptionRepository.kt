@@ -21,5 +21,7 @@ interface SubscriptionRepository {
     
     suspend fun startConnection(): Result<Unit>
 
+    fun isSandboxDemoMode(): Boolean
+    fun setSandboxDemoMode(enabled: Boolean)
     fun endConnection()
 }

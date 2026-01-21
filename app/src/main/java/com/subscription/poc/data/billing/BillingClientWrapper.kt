@@ -104,7 +104,10 @@ constructor(
                 }
             }
             BillingResponseCode.USER_CANCELED -> _purchaseUpdates.tryEmit(PurchaseResult.UserCancelled)
-            else -> _purchaseUpdates.tryEmit(PurchaseResult.Error(billingResult.debugMessage))
+            else -> {
+                android.util.Log.e("BillingDiagnostic", "Purchase update error: ${billingResult.debugMessage} (Code: ${billingResult.responseCode})")
+                _purchaseUpdates.tryEmit(PurchaseResult.Error(billingResult.debugMessage))
+            }
         }
     }
 
@@ -140,28 +143,34 @@ constructor(
         val client = billingClient ?: return PurchaseResult.Error("Not initialized")
         if (!client.isReady) return PurchaseResult.Error("Not ready")
 
-        val productDetailsParamsList = listOf(
-            BillingFlowParams.ProductDetailsParams.newBuilder()
-                .setProductDetails(productDetails)
-                .setOfferToken(offerToken)
-                .build()
-        )
+        val paramsBuilder = BillingFlowParams.newBuilder()
+            .setProductDetailsParamsList(
+                listOf(
+                    BillingFlowParams.ProductDetailsParams.newBuilder()
+                        .setProductDetails(productDetails)
+                        .setOfferToken(offerToken)
+                        .build()
+                )
+            )
 
-        val params = BillingFlowParams.newBuilder()
-            .setProductDetailsParamsList(productDetailsParamsList)
-            .apply {
-                if (oldPurchaseToken != null) {
-                    setSubscriptionUpdateParams(
-                        BillingFlowParams.SubscriptionUpdateParams.newBuilder()
-                            .setOldPurchaseToken(oldPurchaseToken)
-                            .setSubscriptionReplacementMode(replacementMode)
-                            .build()
-                    )
-                }
-            }
-            .build()
+        android.util.Log.d("BillingDiagnostic", "Params: PID=${productDetails.productId} OT=${offerToken.take(10)}...")
+
+        if (oldPurchaseToken != null) {
+            android.util.Log.d("BillingDiagnostic", "Update: oldToken=${oldPurchaseToken.take(10)}... mode=$replacementMode")
+            paramsBuilder.setSubscriptionUpdateParams(
+                BillingFlowParams.SubscriptionUpdateParams.newBuilder()
+                    .setOldPurchaseToken(oldPurchaseToken)
+                    .setSubscriptionReplacementMode(replacementMode)
+                    .build()
+            )
+        }
         
+        val params = paramsBuilder.build()
         val billingResult = client.launchBillingFlow(activity, params)
+        android.util.Log.d("BillingDiagnostic", "Launch Result: ${billingResult.responseCode} - ${billingResult.debugMessage}")
+        if (billingResult.responseCode != BillingResponseCode.OK) {
+            android.util.Log.e("BillingDiagnostic", "Launch failed: ${billingResult.debugMessage} (Code: ${billingResult.responseCode})")
+        }
         return when (billingResult.responseCode) {
             BillingResponseCode.OK -> PurchaseResult.Pending
             BillingResponseCode.USER_CANCELED -> PurchaseResult.UserCancelled

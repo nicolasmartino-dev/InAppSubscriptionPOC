@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.subscription.poc.domain.usecase.ObservePurchaseUpdatesUseCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-20T12:58:57.251Z" hostname="Mac-mini-de-Nicolas-Martino.local" time="0.008">
-  <properties/>
-  <testcase name="invoke returns flow from repository" classname="com.subscription.poc.domain.usecase.ObservePurchaseUpdatesUseCaseTest" time="0.008"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

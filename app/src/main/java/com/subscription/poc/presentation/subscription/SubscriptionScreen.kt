@@ -18,27 +18,34 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ViewCarousel
+import androidx.compose.ui.graphics.Color
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.compose.LifecycleEventEffect
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.ViewCarousel
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -47,9 +54,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
 import com.subscription.poc.domain.model.PurchaseResult
 import com.subscription.poc.presentation.subscription.components.CurrentSubscriptionCard
 import com.subscription.poc.presentation.subscription.components.SubscriptionCard
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Suppress("ktlint:standard:function-naming")
@@ -64,6 +74,7 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
     }
 
     val snackbarHostState = remember { SnackbarHostState() }
+    var showMenu by remember { mutableStateOf(false) }
 
     LaunchedEffect(uiState.lastPurchaseResult) {
         uiState.lastPurchaseResult?.let { result ->
@@ -94,9 +105,44 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                                 Icons.AutoMirrored.Filled.List 
                             else 
                                 Icons.Default.ViewCarousel,
-                            contentDescription = if (uiState.isHorizontalLayout) "List Layout" else "Carousel Layout",
+                            contentDescription = if (uiState.isHorizontalLayout) "Switch to list view" else "Switch to carousel view",
                             tint = MaterialTheme.colorScheme.onPrimary
                         )
+                    }
+                    
+                    Box {
+                        IconButton(onClick = { showMenu = true }) {
+                            Icon(
+                                imageVector = Icons.Default.Settings,
+                                contentDescription = "Settings",
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
+                        
+                        DropdownMenu(
+                            expanded = showMenu,
+                            onDismissRequest = { showMenu = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = { 
+                                    Column {
+                                        Text("Sandbox Demo Mode", fontWeight = FontWeight.Bold)
+                                        Text(
+                                            "Forces Mode 5 to prevent Sandbox crashes",
+                                            style = MaterialTheme.typography.labelSmall,
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                                        )
+                                    }
+                                },
+                                trailingIcon = {
+                                    Switch(
+                                        checked = uiState.isSandboxDemoMode,
+                                        onCheckedChange = { viewModel.toggleSandboxMode(it) }
+                                    )
+                                },
+                                onClick = { viewModel.toggleSandboxMode(!uiState.isSandboxDemoMode) }
+                            )
+                        }
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -108,6 +154,11 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
     ) { paddingValues ->
+    PullToRefreshBox(
+        isRefreshing = uiState.isRefreshing,
+        onRefresh = { viewModel.refresh() },
+        modifier = Modifier.fillMaxSize()
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -130,10 +181,17 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
                         Text(
+                            text = "Something went wrong",
+                            color = MaterialTheme.colorScheme.error,
+                            style = MaterialTheme.typography.headlineSmall,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
                             text = uiState.errorMessage ?: "Unknown error",
                             color = MaterialTheme.colorScheme.error,
                             textAlign = TextAlign.Center,
-                            style = MaterialTheme.typography.bodyLarge,
+                            style = MaterialTheme.typography.bodyMedium,
                         )
                         Spacer(modifier = Modifier.height(16.dp))
                         Button(onClick = { viewModel.loadSubscriptionPlans() }) {
@@ -178,11 +236,14 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                                 contentPadding = PaddingValues(horizontal = 4.dp, vertical = 8.dp)
                             ) {
                                 items(uiState.subscriptionPlans) { plan ->
+                                    val isFirstPlan = uiState.subscriptionPlans.indexOf(plan) == 0
                                     Box(modifier = Modifier.width(280.dp)) {
                                         SubscriptionCard(
                                             subscriptionPlan = plan,
                                             onPurchaseClick = { activity?.let { viewModel.purchaseSubscription(it, plan.productId) } },
                                             isPurchasing = uiState.purchaseInProgress,
+                                            buttonText = if (isFirstPlan) "toto" else "Subscribe",
+                                            buttonColor = if (isFirstPlan) Color.Red else null
                                         )
                                     }
                                 }
@@ -228,6 +289,7 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                             }
 
                             items(uiState.subscriptionPlans) { plan ->
+                                val isFirstPlan = uiState.subscriptionPlans.indexOf(plan) == 0
                                 SubscriptionCard(
                                     subscriptionPlan = plan,
                                     onPurchaseClick = {
@@ -236,6 +298,8 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                                         }
                                     },
                                     isPurchasing = uiState.purchaseInProgress,
+                                    buttonText = if (isFirstPlan) "toto" else "Subscribe",
+                                    buttonColor = if (isFirstPlan) Color.Red else null
                                 )
                             }
 
@@ -255,4 +319,5 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
             }
         }
     }
+}
 }

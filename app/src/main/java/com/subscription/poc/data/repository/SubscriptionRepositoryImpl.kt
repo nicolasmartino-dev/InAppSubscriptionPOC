@@ -30,16 +30,30 @@ class SubscriptionRepositoryImpl @Inject constructor(
     private val sharedPrefs by lazy { context.getSharedPreferences("subscription_prefs", Context.MODE_PRIVATE) }
     private var pendingPlanId: String? = null
     private val repositoryScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+    private val _processedPurchaseUpdates = kotlinx.coroutines.flow.MutableSharedFlow<PurchaseResult>(
+        extraBufferCapacity = 1,
+        onBufferOverflow = kotlinx.coroutines.channels.BufferOverflow.DROP_OLDEST
+    )
 
     init {
         repositoryScope.launch {
             billingClientWrapper.observePurchaseUpdates().collect { result ->
                 if (result is PurchaseResult.Success) {
-                    pendingPlanId?.let { saveLastSelectedPlanId(it) }
-                    pendingPlanId = null
+                    // CRITICAL: Save the plan ID BEFORE notifying the UI
+                    // This ensures the next refresh sees the updated state
+                    synchronized(this) {
+                        pendingPlanId?.let { 
+                            android.util.Log.d("BillingDiagnostic", "Purchase Success. Saving planId: $it")
+                            saveLastSelectedPlanId(it) 
+                        }
+                        pendingPlanId = null
+                    }
                 } else if (result is PurchaseResult.UserCancelled || result is PurchaseResult.Error) {
-                    pendingPlanId = null
+                    synchronized(this) {
+                        pendingPlanId = null
+                    }
                 }
+                _processedPurchaseUpdates.emit(result)
             }
         }
     }
@@ -49,8 +63,7 @@ class SubscriptionRepositoryImpl @Inject constructor(
     }
 
     override suspend fun startConnection() = billingClientWrapper.startConnection()
-    override fun endConnection() = billingClientWrapper.endConnection()
-    override fun observePurchaseUpdates() = billingClientWrapper.observePurchaseUpdates()
+    override fun observePurchaseUpdates() = _processedPurchaseUpdates
 
     private suspend fun <T> runWithRetry(
         action: suspend () -> Result<T>,
@@ -72,12 +85,24 @@ class SubscriptionRepositoryImpl @Inject constructor(
 
     override suspend fun getSubscriptionPlans(): Result<List<SubscriptionPlan>> = runWithRetry(
         action = {
-            val result = billingClientWrapper.querySubscriptionProducts()
-            result.onSuccess { details ->
+            val productResult = billingClientWrapper.querySubscriptionProducts()
+            val activeResult = billingClientWrapper.queryActiveSubscriptions()
+            
+            productResult.onSuccess { details ->
+                android.util.Log.d("BillingDiagnostic", "Fetched ${details.size} products: ${details.map { it.productId }}")
                 val product = details.find { it.productId == "premium_access" }
                 if (product != null) {
                     productDetailsCache[product.productId] = product
-                    val plans = product.subscriptionOfferDetails?.map { mapOffer(it) } ?: emptyList()
+                    val activeSubs = activeResult.getOrNull() ?: emptyList()
+                    val savedId = sharedPrefs.getString("last_plan_id", null)
+                    
+                    val plans = product.subscriptionOfferDetails?.map { offer ->
+                        val plan = mapOffer(offer)
+                        // Mark as active if this offer is the one we have active
+                        val isCurrent = activeSubs.any { it.products.contains("premium_access") } && offer.basePlanId == savedId
+                        plan.copy(isActive = isCurrent)
+                    } ?: emptyList()
+                    
                     return@runWithRetry Result.success(plans)
                 }
             }
@@ -143,37 +168,60 @@ class SubscriptionRepositoryImpl @Inject constructor(
         val offerToken = product.subscriptionOfferDetails?.find { it.basePlanId == productId }?.offerToken
             ?: return PurchaseResult.Error("Plan not found")
         
-        val oldPurchaseToken = billingClientWrapper.queryActiveSubscriptions().getOrNull()
-            ?.find { it.products.contains("premium_access") }?.purchaseToken
-            
-        var replacementMode = ReplacementMode.CHARGE_FULL_PRICE
+        val activePurchases = billingClientWrapper.queryActiveSubscriptions().getOrNull() ?: emptyList()
+        var oldPurchase = activePurchases.find { it.products.contains("premium_access") }
         
-        if (oldPurchaseToken != null) {
-             val savedId = sharedPrefs.getString("last_plan_id", null)
-             if (savedId != null) {
-                 val currentOffer = product.subscriptionOfferDetails?.find { it.basePlanId == savedId }
-                 val newOffer = product.subscriptionOfferDetails?.find { it.basePlanId == productId }
-                 
-                 val currentPrice = currentOffer?.pricingPhases?.pricingPhaseList?.firstOrNull()?.priceAmountMicros ?: 0L
-                 val newPrice = newOffer?.pricingPhases?.pricingPhaseList?.firstOrNull()?.priceAmountMicros ?: 0L
-                 
-                 if (newPrice > currentPrice) {
-                     // Upgrade: Charge Prorated Price
-                     replacementMode = ReplacementMode.CHARGE_PRORATED_PRICE
-                 } else if (newPrice < currentPrice) {
-                     // Downgrade: Deferred
-                     replacementMode = ReplacementMode.DEFERRED
-                 } else {
-                     // Same price or unable to determine: Charge Full Price (or Deferred/TimeProration depending on policy)
-                     replacementMode = ReplacementMode.CHARGE_FULL_PRICE
-                 }
-             }
+        // If no active purchase is found, we should first try a FRESH purchase
+        // without update parameters. This is safer for "Cancelled" or "Hold" states
+        // where Google Play might reject an update handshake.
+        if (oldPurchase == null) {
+            android.util.Log.d("BillingDiagnostic", "No active sub found. Attempting FRESH purchase (no update params).")
+            pendingPlanId = productId
+            return billingClientWrapper.launchBillingFlow(activity, product, offerToken, null, 0)
         }
 
-        pendingPlanId = productId
+        val oldPurchaseToken = oldPurchase?.purchaseToken
+        val savedId = sharedPrefs.getString("last_plan_id", null)
+
+        // Don't allow re-subscribing to the same plan
+        if (oldPurchaseToken != null && productId == savedId) {
+            return PurchaseResult.Error("You are already subscribed to this plan")
+        }
+            
+        val allPlans = getSubscriptionPlans().getOrNull() ?: emptyList()
+        val targetPlan = allPlans.find { it.productId == productId }
+        val currentPlan = allPlans.find { it.productId == savedId }
+        
+        // Sandbox Demo Mode:
+        // In the Google Play Sandbox, mathematical proration modes (2 and 4) often fail
+        // with "Something went wrong" (Code 6) due to accelerated time and rounding errors.
+        // If isSandboxDemoMode() is true, we force WITHOUT_PRORATION (5) which is stable.
+        val replacementMode = if (isSandboxDemoMode()) {
+            android.util.Log.d("BillingDiagnostic", "Sandbox Demo Mode active (dynamic): Forcing Mode 5 for stability")
+            5
+        } else {
+            // Hybrid Fairness Strategy (Production Logic):
+            // - Upgrade: CHARGE_PRORATED_PRICE (2) - Charge diff now, keep cycle same.
+            // - Downgrade: DEFERRED (4) - Change at next renewal, user keeps current benefits.
+            // - Same/Unknown: WITHOUT_PRORATION (5) - Safe fallback.
+            when {
+                currentPlan == null || targetPlan == null -> 5
+                targetPlan.priceMicros > currentPlan.priceMicros -> 2
+                targetPlan.priceMicros < currentPlan.priceMicros -> 4
+                else -> 5 
+            }
+        }
+
+        android.util.Log.d("BillingDiagnostic", "Transition strategy: From ${savedId} to $productId -> Mode $replacementMode")
+
+        synchronized(this) {
+            pendingPlanId = productId
+        }
         val result = billingClientWrapper.launchBillingFlow(activity, product, offerToken, oldPurchaseToken, replacementMode)
         if (result is PurchaseResult.UserCancelled || result is PurchaseResult.Error) {
-            pendingPlanId = null
+            synchronized(this) {
+                pendingPlanId = null
+            }
         }
         return result
     }
@@ -216,5 +264,18 @@ class SubscriptionRepositoryImpl @Inject constructor(
             priceFormatted = when(id) { "first-monthly" -> "$4.99" ; "second-monthly" -> "$5.99" ; else -> "$8.99" },
             priceMicros = 0L, currencyCode = "CAD", billingPeriod = "Monthly"
         )
+    }
+
+    override fun isSandboxDemoMode(): Boolean {
+        // Default to true for easy initial testing
+        return sharedPrefs.getBoolean("sandbox_demo_mode", true)
+    }
+
+    override fun setSandboxDemoMode(enabled: Boolean) {
+        sharedPrefs.edit { putBoolean("sandbox_demo_mode", enabled) }
+    }
+
+    override fun endConnection() {
+        billingClientWrapper.endConnection()
     }
 }

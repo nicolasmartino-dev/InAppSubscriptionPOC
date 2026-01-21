@@ -15,6 +15,10 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.graphics.Color
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,9 +33,13 @@ fun SubscriptionCard(
     onPurchaseClick: () -> Unit,
     modifier: Modifier = Modifier,
     isPurchasing: Boolean = false,
+    buttonText: String = "Subscribe",
+    buttonColor: Color? = null,
 ) {
     Card(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .semantics(mergeDescendants = true) { },
         colors =
             CardDefaults.cardColors(
                 containerColor =
@@ -92,7 +100,11 @@ fun SubscriptionCard(
                 ) {
                     Text(
                         text = "✓ Active",
-                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp, vertical = 8.dp)
+                            .semantics { 
+                                contentDescription = "Currently active subscription plan" 
+                            },
                         color = MaterialTheme.colorScheme.onPrimary,
                         fontWeight = FontWeight.Bold,
                     )
@@ -101,7 +113,16 @@ fun SubscriptionCard(
                 Button(
                     onClick = onPurchaseClick,
                     enabled = !isPurchasing,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .semantics { 
+                            contentDescription = "Purchase ${subscriptionPlan.name} plan" 
+                        },
+                    colors = if (buttonColor != null) {
+                        ButtonDefaults.buttonColors(containerColor = buttonColor)
+                    } else {
+                        ButtonDefaults.buttonColors()
+                    }
                 ) {
                     if (isPurchasing) {
                         CircularProgressIndicator(
@@ -112,7 +133,7 @@ fun SubscriptionCard(
                         Spacer(modifier = Modifier.width(8.dp))
                     }
                     Text(
-                        text = if (isPurchasing) "Purchasing..." else "Subscribe",
+                        text = if (isPurchasing) "Purchasing..." else buttonText,
                     )
                 }
             }

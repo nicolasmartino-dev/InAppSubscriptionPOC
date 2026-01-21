@@ -1,2 +1,0 @@
--keep,allowobfuscation,allowshrinking class com.subscription.poc.presentation.subscription.SubscriptionViewModel
--keep,allowobfuscation,allowshrinking class com.subscription.poc.presentation.subscription.SubscriptionViewModel
