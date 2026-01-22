@@ -129,9 +129,27 @@ stages:
                 BOOT_COMPLETE=$("$ADB" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
                 echo "Boot status: $BOOT_COMPLETE"
               done
-              echo "Emulator is ready!"
+              echo "Emulator is ready (Boot Completed)!"
+              
+              # Wait for Package Manager to be ready
+              echo "Waiting for Package Manager service..."
+              PM_READY=""
+              START_TIME=$(date +%s)
+              while [ "$PM_READY" != "package:/system/framework/framework-res.apk" ]; do
+                 CURRENT_TIME=$(date +%s)
+                 ELAPSED=$((CURRENT_TIME - START_TIME))
+                 if [ $ELAPSED -gt 300 ]; then
+                     echo "Timeout waiting for Package Manager"
+                     exit 1
+                 fi
+                 sleep 5
+                 PM_READY=$("$ADB" shell pm path android 2>/dev/null | tr -d '\r')
+                 echo "PM status: $PM_READY"
+              done
+              echo "Package Manager is ready!"
+
               # Give the system extra time to settle and dismiss boot dialogs
-              sleep 30
+              sleep 60
             displayName: 'Start Emulator'
             timeoutInMinutes: 20
 
