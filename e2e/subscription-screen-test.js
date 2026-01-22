@@ -66,6 +66,7 @@ async function runTest() {
                     }
                 } catch (e) {
                     console.log('   ⚠️ Read failed');
+                    outputContent = "Read failed"; // Mark outputContent to indicate read failure
                 }
             }
 
@@ -73,9 +74,13 @@ async function runTest() {
             // If we haven't succeeded yet, check state and maybe nudge it
             if (!loaded && i < MAX_RETRIES - 1) {
 
-                // If we saw an ANR, try to dismiss it by clicking "Wait"
-                if (outputContent.includes("isn't responding")) {
-                    console.log('   ⚠️ ANR Dialog detected.');
+                // If the dump failed, it's likely an ANR dialog blocking it.
+                // Or if we successfully read "isn't responding".
+                const isAnr = outputContent.includes("isn't responding");
+                const isReadFailed = outputContent.includes("Read failed") || outputContent.trim().length === 0;
+
+                if (isAnr || isReadFailed) {
+                    console.log('   ⚠️ ANR Dialog or Read Failure detected.');
 
                     // Try to find the "Wait" button coordinates in the XML dump
                     // XML pattern: <node ... text="Wait" ... bounds="[237,1257][843,1389]" ... />
@@ -90,8 +95,10 @@ async function runTest() {
                         try { await execPromise(`${ADB} shell input tap ${centerX} ${centerY}`); } catch (e) { }
                     } else {
                         // Fallback: Try keyboard navigation (Tab -> Enter)
-                        console.log('   Warning: Could not find "Wait" button bounds. Trying generic key events...');
+                        // This is crucial when "Read failed" because we have no coordinates!
+                        console.log('   Warning: Could not find "Wait" button bounds (or read failed). Trying generic key events...');
                         try {
+                            // Send TAB to move focus to "Wait" (usually the second option)
                             await execPromise(`${ADB} shell input keyevent 61`); // TAB
                             await sleep(500);
                             await execPromise(`${ADB} shell input keyevent 66`); // ENTER
