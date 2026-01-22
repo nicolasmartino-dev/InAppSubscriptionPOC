@@ -128,11 +128,11 @@ async function runTest() {
         // Step 2: Final Verification (using the last successful dump)
         const { stdout } = await execPromise(`${ADB} shell cat /sdcard/ui.xml`);
 
-        // Step 3: Verify key elements are present
+        // Step 3: Verify key elements are present (Purchase Screen)
         const checks = [
             { name: 'Choose Your Plan header', pattern: /Choose Your Plan/i },
-            { name: 'Current Subscription section', pattern: /Current Subscription/i },
-            { name: 'Manage Subscription button', pattern: /Manage Subscription/i },
+            { name: 'First (Mock) plan', pattern: /First \(Mock\)/i },
+            { name: 'Subscribe button', pattern: /Subscribe/i },
         ];
 
         let passed = 0;
