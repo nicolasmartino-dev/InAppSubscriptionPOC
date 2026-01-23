@@ -39,6 +39,15 @@ async function runTest() {
             let dumpSuccess = false;
             let outputContent = '';
 
+            // CLEANUP: Kill stuck uiautomator and delete old dump to prevent stale data
+            try {
+                await execPromise(`${ADB} shell pkill -f uiautomator`);
+            } catch (e) { /* Ignore - process might not exist */ }
+            try {
+                await execPromise(`${ADB} shell rm -f /sdcard/ui.xml`);
+            } catch (e) { /* Ignore */ }
+            await sleep(500); // Let accessibility service reset
+
             // Dump UI hierarchy
             try {
                 await execPromise(`${ADB} shell uiautomator dump /sdcard/ui.xml`);
