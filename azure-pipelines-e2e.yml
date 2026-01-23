@@ -102,14 +102,28 @@ stages:
               fi
             displayName: 'Create AVD'
 
-          # Start Emulator
+          # START OPTIMIZATION: Launch emulator first, then build, then wait
+          
+          # 1. Launch Emulator (Background)
           - script: |
-              echo "=== Starting Emulator ==="
+              echo "=== Launching Emulator (Async) ==="
               EMULATOR="$ANDROID_SDK_ROOT/emulator/emulator"
-              ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
               
               # Start emulator in background
               nohup "$EMULATOR" -avd test_avd -no-window -no-audio -no-boot-anim -no-snapshot -gpu swiftshader_indirect &
+              echo "Emulator process started in background."
+            displayName: 'Launch Emulator (Async)'
+
+          # 2. Build the app (runs while emulator boots)
+          - script: |
+              chmod +x ./gradlew
+              ./gradlew assembleDebug
+            displayName: 'Build Debug APK'
+
+          # 3. Wait for Emulator readiness
+          - script: |
+              echo "=== Waiting for Emulator to be Ready ==="
+              ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
               
               # Wait for device
               "$ADB" wait-for-device
@@ -148,16 +162,10 @@ stages:
               done
               echo "Package Manager is ready!"
 
-              # Give the system extra time to settle and dismiss boot dialogs
-              sleep 60
-            displayName: 'Start Emulator'
+              # Reduced sleep time here as we already waited during the build
+              sleep 10
+            displayName: 'Wait for Emulator'
             timeoutInMinutes: 20
-
-          # Build the app
-          - script: |
-              chmod +x ./gradlew
-              ./gradlew assembleDebug
-            displayName: 'Build Debug APK'
 
           # Install the app
           - script: |
