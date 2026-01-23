@@ -42,7 +42,7 @@ constructor(
     @ApplicationContext private val context: Context,
 ) {
     companion object {
-        val SUBSCRIPTION_PRODUCT_IDS = listOf("premium_access")
+        val SUBSCRIPTION_PRODUCT_IDS = listOf("subscription_first", "subscription_second", "subscription_bundle")
     }
 
     private var billingClient: BillingClient? = null

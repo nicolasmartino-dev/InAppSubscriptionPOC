@@ -1,0 +1,500 @@
+01-20 22:45:49.510  5038  5038 I Finsky  : [2] SCH: job service start with id 9890.
+01-20 22:45:49.516  5038  7433 I Finsky  : [1196] SCH: Satisfied jobs for 9890 are: 12-1
+01-20 22:45:49.517  5038  7572 I Finsky  : [1210] SCH: Job 12-1 starting
+01-20 22:45:49.518  5038  5038 I Finsky  : [2] WM::SCH: Logging work start for 12-1
+01-20 22:45:49.518  5038  5038 I Finsky  : [2] [ContentSync] job started
+01-20 22:45:49.805  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.threadnetwork' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.822  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.uprobestats' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.825  5038  5044 I android.vending: Background concurrent mark compact GC freed 7150KB AllocSpace bytes, 9(484KB) LOS objects, 49% free, 16MB/33MB, paused 3.965ms,14.952ms total 299.371ms
+01-20 22:45:49.843  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.vibrator' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.858  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.uwb' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.858  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.bt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.859  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.widevine.nonupdatable' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.860  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.tzdata6' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.867  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.permission' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.889  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.wifi' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.893  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.contexthub' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.894  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.authsecret' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.897  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.apex.cts.shim' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.900  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.thermal' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.904  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.telephonycore' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.914  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.appsearch' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.914  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.media.swcodec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.915  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.art' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.922  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.profiling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.933  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.mediaprovider' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.940  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.uwb' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.941  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.virt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.941  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.neuralnetworks' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.941  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.crashrecovery' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.941  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.adbd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.943  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.resolv' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.948  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.i18n' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.949  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.dumpstate' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.949  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.configinfrastructure' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.950  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.media' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.950  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.conscrypt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.953  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.cas' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.959  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.neuralnetworks' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.961  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.runtime' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.961  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.ipsec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.961  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.devicelock' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.968  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.power' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.969  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.ondevicepersonalization' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.974  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.sdkext' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.974  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.healthfitness' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.988  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.adservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.989  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.tethering' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:49.992  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.extservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:50.002  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.nfcservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:50.008  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.os.statsd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:50.009  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.rebootescrow' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:50.012  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.cellbroadcast' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:50.021  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.rkpd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:50.037  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.scheduling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:50.041  5038  5038 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.gatekeeper' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+01-20 22:45:50.045  5038  5038 I Finsky  : [2] App states replicator found 2 unowned apps
+01-20 22:45:50.048  5038  5094 I Finsky  : [57] Completed 0 account content syncs with 0 successful.
+01-20 22:45:50.048  5038  5038 I Finsky  : [2] [ContentSync] Installation state replication succeeded.
+01-20 22:45:50.048  5038  5038 I Finsky  : [2] SCH: jobFinished: 12-1. TimeElapsed: 530ms.
+01-20 22:45:50.048  5038  5038 I Finsky  : [2] WM::SCH: Logging work end for 12-1
+01-20 22:45:50.062  5038  5123 I Finsky  : [73] SCH: Scheduling phonesky job Id: 1-1337, CT: 1768966437082, Constraints: [{ L: 19582790, D: 62782790, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]
+01-20 22:45:50.062  5038  5123 I Finsky  : [73] SCH: Scheduling phonesky job Id: 34-22, CT: 1768941372817, Constraints: [{ L: 604800000, D: 2591999592, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]
+01-20 22:45:50.062  5038  5123 I Finsky  : [73] SCH: Scheduling phonesky job Id: 34-29, CT: 1768941362535, Constraints: [{ L: 79194211, D: 1375194211, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]
+01-20 22:45:50.065  5038  5097 I Finsky  : [60] SCH: Scheduling 1 system job(s)
+01-20 22:45:50.065  5038  5097 I Finsky  : [60] SCH: Scheduling system job Id: 9894, L: 18869807, D: 62069807, C: false, I: false, N: 1
+01-20 22:45:50.069  5038  7572 I Finsky  : [1210] SCH: job service finished with id 9890.
+01-20 22:45:50.428   695  2141 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:50.429  2150  2342 D SatelliteController: iisInCarrierRoamingNbIotNtn: satellite is disabled
+01-20 22:45:50.429  2150  2342 D SatelliteController: getCarrierRoamingNtnConnectType: Falling back to global carrier config connect type: 0
+01-20 22:45:50.446   695   897 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+01-20 22:45:51.563  7575  7575 W libbinder.BackendUnifiedServiceManager: Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: package
+01-20 22:45:51.663  1157  5820 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+01-20 22:45:51.666  1157  4726 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/split_AdsDynamite_installtime.odex) is kOatUpToDate with filter 'speed' executable 'false'
+01-20 22:45:51.668  1157  5820 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/split_CronetDynamite_installtime.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+01-20 22:45:51.670  1157  4726 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/split_DynamiteLoader_installtime.odex) is kOatUpToDate with filter 'speed' executable 'false'
+01-20 22:45:51.672  1157  5820 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/split_DynamiteModulesA_installtime.odex) is kOatUpToDate with filter 'speed' executable 'false'
+01-20 22:45:51.675  1157  4726 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/split_DynamiteModulesC_installtime.odex) is kOatUpToDate with filter 'speed' executable 'false'
+01-20 22:45:51.677  1157  5820 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/split_GoogleCertificates_installtime.odex) is kOatUpToDate with filter 'speed' executable 'false'
+01-20 22:45:51.679  1157  4726 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/split_MapsDynamite_installtime.odex) is kOatUpToDate with filter 'speed' executable 'false'
+01-20 22:45:51.681  1157  5820 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bx0TMrFPvW77aao8qC9ubg==/com.google.android.gms-Hlb--uCdsWGRiMTVHqS8Dw==/oat/arm64/split_MeasurementDynamite_installtime.odex) is kOatUpToDate with filter 'speed' executable 'false'
+01-20 22:45:51.684  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/0000000d/dl-PlayCloudSearch.optional_253434100000.apk has no usable artifacts
+01-20 22:45:51.686  1157  5820 I artd    : GetBestInfo: /data/user/0/com.google.android.gms/app_dg_cache/68ABBF10BD2349E9D7068D50DCB84A7E0CD70855/the.apk has no usable artifacts
+01-20 22:45:51.686  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000001/CronetDynamite.apk has no usable artifacts
+01-20 22:45:51.688  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/0000000e/dl-Appsearch.optional_253434100400.apk has no usable artifacts
+01-20 22:45:51.688  1157  5820 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000002/DynamiteLoader.apk has no usable artifacts
+01-20 22:45:51.690  1157  5820 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.google.android.gms/app_dg_cache/A1442E7AF072B496CCB2C7DF6A5CEECC73356BBA/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+01-20 22:45:51.691  1157  4726 W artd    : Could not get dex checksums for location /data/app/~~xUPhVIQcrQC9sxqrshefRw==/com.eventful.app-B-IRbzaMLFp5xpKPCHJ3mQ==/base.apk, fd=-1
+01-20 22:45:51.692  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000017/dl-PlayCloudSearch.optional_255034100000.apk has no usable artifacts
+01-20 22:45:51.693  1157  5820 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000005/GoogleCertificates.apk has no usable artifacts
+01-20 22:45:51.695  1157  5820 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.google.android.gms/app_dg_cache/4346EA85CDA1436041B029D54013FBB1AA13E134/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+01-20 22:45:51.697  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000009/dl-TfliteDynamiteDynamite.integ_243930802100400.apk has no usable artifacts
+01-20 22:45:51.699  1157  5820 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000012/dl-Appsearch.optional_255034100400.apk has no usable artifacts
+01-20 22:45:51.701  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/0000000a/dl-VisionOcr.optional_253434100000.apk has no usable artifacts
+01-20 22:45:51.702  1157  5820 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000013/dl-MlkitBarcodeUi.optional_255034100400.apk has no usable artifacts
+01-20 22:45:51.705  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/0000000b/dl-MlkitOcrCommon.optional_253434100400.apk has no usable artifacts
+01-20 22:45:51.707  1157  5820 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000011/dl-VisionOcr.optional_255034100000.apk has no usable artifacts
+01-20 22:45:51.709  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/0000000f/dl-MlkitBarcodeUi.optional_253434100400.apk has no usable artifacts
+01-20 22:45:51.711  1157  5820 I artd    : GetBestInfo: /data/user/0/com.google.android.gms/app_dg_cache/049A20A054B771E851974256D3271311889FCDDF/the.apk has no usable artifacts
+01-20 22:45:51.712  1157  4726 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000016/dl-MlkitOcrCommon.optional_255034100400.apk has no usable artifacts
+01-20 22:45:51.713  1157  5820 W artd    : Could not get dex checksums for location /data/app/~~e9SaQuhkoAJ1AA44PxTZ7g==/com.android.vending-0nix2bnSxiLOaVO33d8jnw==/base.apk, fd=-1
+01-20 22:45:51.714  1157  5820 I artd    : GetBestInfo: /data/user_de/0/com.google.android.gms/app_chimera/m/00000018/dl-AdsFdrDynamite.integ_254380203100000.apk has no usable artifacts
+01-20 22:45:52.012  2356  2356 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+01-20 22:45:52.788  1115  1318 W AlarmManager: Unrecognized alarm listener com.android.networkstack.android.net.ip.IpClientLinkObserver$Dhcp6PdPreferredPrefixAlarmListener@e0539fe
+01-20 22:45:52.788  1115  1318 D ApfFilter: (wlan0): Ignoring RA RA fe80::2 -> ff02::1 1800s fec0::/64 86400s/14400s  which matches RA fe80::2 -> ff02::1 1800s fec0::/64 86400s/14400s 
+01-20 22:45:53.452   695   897 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+01-20 22:45:53.628   695  1883 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=153344743 mSleepTimeMs=23100 mIdleTimeMs=7700 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[550, 1650, 3300, 4400, 4950],mRxTimeMs=4950}]}
+01-20 22:45:54.089   695  1882 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 16
+01-20 22:45:54.168   533   653 D AudioFlinger: mixer(0xb400007b99c5f790) throttle end: throttle time(44)
+01-20 22:45:54.304  7595  7595 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+01-20 22:45:54.307  7595  7595 I AndroidRuntime: Using default boot image
+01-20 22:45:54.307  7595  7595 I AndroidRuntime: Leaving lock profiling enabled
+01-20 22:45:54.309  7595  7595 I app_process: Using CollectorTypeCMC GC.
+01-20 22:45:54.319  6142  6183 V WindowManagerShell: Transition requested (#25): android.os.BinderProxy@9885a5e TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=24 effectiveUid=10218 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.subscription.poc/.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} numActivities=0 lastActiveTime=153112903 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.os.BinderProxy@ad9a06} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=true lastNonFullscreenBounds=null capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=503 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false isLeafTask= true eligibleForLetterboxEducation= false isLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 0, 0) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatMode=undefinedundefined} topNonResizableActivityAspectRatio=-1.0} topActivityMainWindowFrame=null isAppBubble=false}, pipChange = null, remoteTransition = null, displayChange = null, requestedLocation = null, userChange = null, windowingLayerChange = null, flags = 0, debugId = 25 }
+01-20 22:45:54.322   542   606 I libbinder.BpBinder: onLastStrongRef automatically unlinking death recipients for descriptor: '(not cached)'
+01-20 22:45:54.325  1172  1172 D b/417220811: invalidateLoadedTasks - previous requestLoadId: -1
+01-20 22:45:54.341   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:54.354  1172  1172 D BaseActivity: Launcher flags updated: [state_started|state_resumed|state_user_active] +[state_resumed|state_user_active]
+01-20 22:45:54.356   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:54.360  6142  6183 D WindowManagerShell: setLauncherKeepClearAreaHeight: visible=true, height=495
+01-20 22:45:54.361   695   755 V WindowManager: Sent Transition (#25) createdAt=01-20 22:45:54.318 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=24 effectiveUid=10218 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.subscription.poc/.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} numActivities=0 lastActiveTime=153112903 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{45c6b51 Task{5dd2e56 #24 type=standard A=10218:com.subscription.poc}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=true lastNonFullscreenBounds=null capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=503 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false isLeafTask= true eligibleForLetterboxEducation= false isLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 0, 0) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatMode=undefinedundefined} topNonResizableActivityAspectRatio=-1.0} topActivityMainWindowFrame=null isAppBubble=false}, pipChange = null, remoteTransition = null, displayChange = null, requestedLocation = null, userChange = null, windowingLayerChange = null, flags = 0, debugId = 25 }
+01-20 22:45:54.368  6142  6201 V WindowManagerShell: onTransitionReady(transaction=2985002272840)
+01-20 22:45:54.369  1172  1172 D BaseActivity: Launcher flags updated: [state_started|state_resumed|state_deferred_resumed|state_user_active] +[state_deferred_resumed]
+01-20 22:45:54.369   695   755 V WindowManager:     startWCT=WindowContainerTransaction { changes= {} hops= [] errorCallbackToken=null taskFragmentOrganizer=null }
+01-20 22:45:54.370   695   755 V WindowManager:     info={id=25 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+01-20 22:45:54.370   695   755 V WindowManager:         {WCT{RemoteToken{57ffdfd Task{7b051ad #1 type=home}}} m=CHANGE f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1#120)/@0x9b48e90 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},
+01-20 22:45:54.370   695   755 V WindowManager:         {WCT{RemoteToken{45c6b51 Task{5dd2e56 #24 type=standard A=10218:com.subscription.poc}}} m=CLOSE f=TRANSLUCENT leash=Surface(name=Task=24#168)/@0xe846eea sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0}
+01-20 22:45:54.370   695   755 V WindowManager:     ]}
+01-20 22:45:54.373  1172  1172 D StatsLog: LAUNCHER_ONRESUME
+01-20 22:45:54.376  1172  1214 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+01-20 22:45:54.384  6142  6183 V WindowManagerShell: onTransitionReady (#25) android.os.BinderProxy@9885a5e: {id=25 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+01-20 22:45:54.384  6142  6183 V WindowManagerShell:         {m=CHANGE f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1#120)/@0xd4b4e3f sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},
+01-20 22:45:54.384  6142  6183 V WindowManagerShell:         {m=CLOSE f=TRANSLUCENT leash=Surface(name=Task=24#168)/@0xea1b30c sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0}
+01-20 22:45:54.384  6142  6183 V WindowManagerShell:     ]}
+01-20 22:45:54.384  6142  6183 V WindowManagerShell: Playing animation for (#25) android.os.BinderProxy@9885a5e@0
+01-20 22:45:54.384  6142  6183 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+01-20 22:45:54.384  6142  6183 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=25 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{m=CHANGE f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1#120)/@0xd4b4e3f sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},{m=CLOSE f=TRANSLUCENT leash=Surface(name=Task=24#168)/@0xea1b30c sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0}]}
+01-20 22:45:54.384  6142  6183 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=undefined independent=true modes=[CLOSE,TO_BACK] flags=IN_TASK_WITH_EMBEDDED_ACTIVITY mustBeTask=false order=ANY topActivity=null launchCookie=null taskFragmentToken=android.os.BinderProxy@b62979a windowingMode=undefined isCrossDisplayMove=false}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@e47a8cb, appThread = android.app.IApplicationThread$Stub$Proxy@1f2e8a8, debugName = overlayBackTransition }}
+01-20 22:45:54.384  6142  6183 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined isCrossDisplayMove=false},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined isCrossDisplayMove=false}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@1406fc1, appThread = android.app.IApplicationThread$Stub$Proxy@ac29366, debugName = LauncherToDream }}
+01-20 22:45:54.384  6142  6183 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null windowingMode=undefined isCrossDisplayMove=false},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined isCrossDisplayMove=false},{NOT atype=undefined independent=true modes=[] flags=NONE mustBeTask=true order=ANY topActivity=null launchCookie=null customAnim=true windowingMode=undefined isCrossDisplayMove=false}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@4a606a7, appThread = android.app.IApplicationThread$Stub$Proxy@ce1e754, debugName = QuickstepLaunchHome }}
+01-20 22:45:54.384  6142  6183 V WindowManagerShell:  Delegate animation for (#25) to null
+01-20 22:45:54.384  6142  6183 V WindowManagerShell: start default transition animation, info = {id=25 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{m=CHANGE f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1#120)/@0xd4b4e3f sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},{m=CLOSE f=TRANSLUCENT leash=Surface(name=Task=24#168)/@0xea1b30c sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0}]}
+01-20 22:45:54.389   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:54.391   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:54.392  1172  1172 D BaseActivity: Launcher flags updated: [state_started|state_resumed|state_deferred_resumed|state_window_focused|state_user_active] +[state_window_focused]
+01-20 22:45:54.419   695   862 I ImeTracker: com.google.android.apps.nexuslauncher:53f34485: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+01-20 22:45:54.438  1172  1172 D InsetsController: hide(ime())
+01-20 22:45:54.438  1172  1172 I ImeTracker: com.google.android.apps.nexuslauncher:53f34485: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+01-20 22:45:54.451  6142  6183 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@38f5736 animAttr=0x7 type=CLOSE isEntrance=false
+01-20 22:45:54.461  1370  1370 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2092 
+01-20 22:45:54.467  7595  7595 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+01-20 22:45:54.477  6142  6183 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@251d35
+01-20 22:45:54.477   695  1883 I ImeTracker: system_server:da044a29: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+01-20 22:45:54.485  1370  1370 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+01-20 22:45:54.485  1370  1370 W NotificationCenter: NotificationCenter$NotificationQueue.notifyPendingNotificationsOnExecutor():877 Heavy notify work detected on UI thread: [mnh->kko, mnh->hiz, mnh->kko, mnh->kko, mnh->kko, mnh->lrg, mnh->kko, mnh->kko, mnh->kko, mnh->kko, mnh->kko, mnh->kko, mnh->glh, mnh->mmk, mnh->opo, mnh->kko, mnh->kmi, mnh->gix, mnh->kko, mnh->obd, mnh->mma, mnh->kko, mnh->khy] takes 23ms
+01-20 22:45:54.486  1681  1681 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.measurement.START xflg=0x4 pkg=com.google.android.gms }
+01-20 22:45:54.486  1681  1681 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.measurement.START xflg=0x4 pkg=com.google.android.gms }
+01-20 22:45:54.486  1370  1370 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1349 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+01-20 22:45:54.489  7595  7595 D nativeloader: Load libicu_jni.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+01-20 22:45:54.489  4258  4328 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+01-20 22:45:54.489  4258  4328 I AiAiEcho: EchoTargets: 
+01-20 22:45:54.489  4258  4328 I AiAiEcho: Filtered by AiAi flag check: 
+01-20 22:45:54.489  4258  4328 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+01-20 22:45:54.489  4258  4328 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+01-20 22:45:54.489  4258  4328 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+01-20 22:45:54.492   695   758 I ImeTracker: system_server:da044a29: onCancelled at PHASE_SERVER_SHOULD_HIDE
+01-20 22:45:54.492  7595  7595 D app_process: u_setTimeZoneFilesDirectory("/apex/com.android.tzdata/etc/tz/versioned/9/icu") succeeded. 
+01-20 22:45:54.492  7595  7595 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt76l.dat
+01-20 22:45:54.493  7595  7595 D nativeloader: Load libjavacore.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+01-20 22:45:54.499  7595  7595 D nativeloader: Load libopenjdk.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+01-20 22:45:54.503  1370  1370 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+01-20 22:45:54.504  7595  7595 I app_process: Priority-to-niceness mapping: 19, 16, 13, 10, 0, -2, -4, -5, -6, -8
+01-20 22:45:54.507   695   821 W PackageConfigPersister: App-specific configuration not found for packageName: com.google.android.apps.nexuslauncher and userId: 0
+01-20 22:45:54.521  1172  1172 D b/417220811: invalidateLoadedTasks - previous requestLoadId: -1
+01-20 22:45:54.534  1172  1172 D SsBaseTemplateCard: Passed-in item info is null
+01-20 22:45:54.534  1172  1172 D SsBaseTemplateCard: Passed-in item info is null
+01-20 22:45:54.534  1172  1172 D SsBaseTemplateCard: Passed-in item info is null
+01-20 22:45:54.534  1172  1172 D SsBaseTemplateCard: Passed-in item info is null
+01-20 22:45:54.534  1172  1172 I SsBaseTemplateCard: Secondary card pane is null
+01-20 22:45:54.553  7595  7595 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+01-20 22:45:54.559  7595  7595 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+01-20 22:45:54.559  7595  7595 D nativeloader: Load /system/lib64/libmonkey_jni.so using ns default for caller /system/framework/monkey.jar in same partition (is_bridged=0): ok
+01-20 22:45:54.561  7595  7595 W Monkey  : args: [-p, com.subscription.poc, -c, android.intent.category.LAUNCHER, 1]
+01-20 22:45:54.568  7595  7595 I AconfigPackage: android.media.swcodec.flags is mapped to com.android.media.swcodec
+01-20 22:45:54.571  7595  7595 I AconfigPackage: com.android.permission.flags is mapped to com.android.permission
+01-20 22:45:54.571  7595  7595 I AconfigPackage: com.android.permissioncontroller.flags is mapped to com.android.permission
+01-20 22:45:54.571  7595  7595 I AconfigPackage: com.android.icu is mapped to com.android.i18n
+01-20 22:45:54.571  7595  7595 I AconfigPackage: com.android.appsearch.flags is mapped to com.android.appsearch
+01-20 22:45:54.571  7595  7595 I AconfigPackage: android.uprobestats.mainline.flags is mapped to com.android.uprobestats
+01-20 22:45:54.571  7595  7595 I AconfigPackage: com.android.crashrecovery.flags is mapped to com.android.crashrecovery
+01-20 22:45:54.571  7595  7595 I AconfigPackage: android.provider.flags is mapped to com.android.configinfrastructure
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.server.deviceconfig is mapped to com.android.configinfrastructure
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.art.flags is mapped to com.android.art
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.art.rw.flags is mapped to com.android.art
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.libcore is mapped to com.android.art
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.telephony.flags is mapped to com.android.telephonycore
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.media.extractor.flags is mapped to com.android.media
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.media.mainline.flags is mapped to com.android.media
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.wifi.flags is mapped to com.android.wifi
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.org.conscrypt.flags is mapped to com.android.conscrypt
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.org.conscrypt.net.flags is mapped to com.android.conscrypt
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.healthfitness.flags is mapped to com.android.healthfitness
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.ipsec.flags is mapped to com.android.ipsec
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.nfc.module.flags is mapped to com.android.nfcservices
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.adservices.ondevicepersonalization.flags is mapped to com.android.ondevicepersonalization
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.adbd.flags is mapped to com.android.adbd
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.bluetooth.flags is mapped to com.android.bt
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.devicelock.flags is mapped to com.android.devicelock
+01-20 22:45:54.572  7595  7595 I AconfigPackage: android.os.profiling is mapped to com.android.profiling
+01-20 22:45:54.572  7595  7595 I AconfigPackage: android.os.profiling.anomaly.flags is mapped to com.android.profiling
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.os.statsd.flags is mapped to com.android.os.statsd
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.rkpd.flags is mapped to com.android.rkpd
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.cellbroadcastreceiver.flags is mapped to com.android.cellbroadcast
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.adservices.flags is mapped to com.android.adservices
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.sdksandbox.flags is mapped to com.android.adservices
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.uwb.flags is mapped to com.android.uwb
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.ranging.flags is mapped to com.android.uwb
+01-20 22:45:54.572  7595  7595 I AconfigPackage: android.graphics.pdf.flags is mapped to com.android.mediaprovider
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.providers.media.flags is mapped to com.android.mediaprovider
+01-20 22:45:54.572  7595  7595 I AconfigPackage: android.graphics.pdf.flags.readonly is mapped to com.android.mediaprovider
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.tethering.mainline.beta is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: android.net.http is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.tethering.readonly.flags is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: android.net.vcn is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.net.flags is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.tethering.beta.test is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.nearby.flags is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.net.ct.flags is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.net.thread.flags is mapped to com.android.tethering
+01-20 22:45:54.572  7595  7595 I AconfigPackage: com.android.system.virtualmachine.flags is mapped to com.android.virt
+01-20 22:45:54.572  7595  7595 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+01-20 22:45:54.584   695   856 D EventHub: No input device configuration file found for device 'Monkey touch'.
+01-20 22:45:54.585   695   856 I EventHub: usingClockIoctl=true
+01-20 22:45:54.585   695   856 I EventHub: New device: id=17, fd=536, path='/dev/input/event13', name='Monkey touch', classes=TOUCH | TOUCH_MT, configuration='', keyLayout='', keyCharacterMap='', builtinKeyboard=false, 
+01-20 22:45:54.585   695   856 I InputReader: Device reconfigured: id=17, name='Monkey touch', size 1080x2400, orientation Rotation0, mode DIRECT, display id 0
+01-20 22:45:54.585   695   856 I InputReader: Device added: id=17, eventHubId=17, name='Monkey touch', descriptor='e1fe28b90f915c7d1febbd52c1ef84b3c4cbed9f',sources=TOUCHSCREEN
+01-20 22:45:54.589   695   758 D WindowManager: Direct invocation of sendNewConfiguration: Display{#0 state=ON size=1080x2400 ROTATION_0}
+01-20 22:45:54.589   695   758 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:54.592  1370  1370 I PkDeviceHelper: PkDeviceHelper.refreshDevices():87 refreshing devices
+01-20 22:45:54.592  1370  1370 I PkDeviceHelper: PkDeviceHelper.addDevice():125 device qwerty2 added
+01-20 22:45:54.601  7595  7595 W Monkey  :  arg: "-p"
+01-20 22:45:54.601  7595  7595 W Monkey  :  arg: "com.subscription.poc"
+01-20 22:45:54.601  7595  7595 W Monkey  :  arg: "-c"
+01-20 22:45:54.601  7595  7595 W Monkey  :  arg: "android.intent.category.LAUNCHER"
+01-20 22:45:54.601  7595  7595 W Monkey  :  arg: "1"
+01-20 22:45:54.601  7595  7595 W Monkey  : data="com.subscription.poc"
+01-20 22:45:54.601  7595  7595 W Monkey  : data="android.intent.category.LAUNCHER"
+01-20 22:45:54.619  1681  7610 D AdvertisingIdClient: AdvertisingIdClient already created.
+01-20 22:45:54.619  1681  7610 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+01-20 22:45:54.639   695   821 W ActivityManager: registerReceiverWithFeature: no app for null
+01-20 22:45:54.642  1681  7610 D AdvertisingIdClient: AdvertisingIdClient is bounded
+01-20 22:45:54.644  1681  7610 I AdvertisingIdClient: shouldSendLog 152700220
+01-20 22:45:54.644  1681  7610 I AdvertisingIdClient: GetInfoInternal elapse 25ms
+01-20 22:45:54.648   695  1114 W ActivityTaskManager: callingPackage for (uid=2000, pid=7595) has no WPC
+01-20 22:45:54.649  2356  2356 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.presencemanager.service.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentApiService }
+01-20 22:45:54.649   695  1114 V WindowManager: DesktopModeLaunchParamsModifier: phase= 0 task=null activity=null display-area-from-current-params=null display-area-from-default-fallback=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 task null, skipping
+01-20 22:45:54.649   695  1114 V WindowManager: TaskLaunchParamsModifier:phase=0 task=null activity=null display-area-from-current-params=null display-area-from-default-fallback=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022
+01-20 22:45:54.650   695  1114 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@9197638e does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+01-20 22:45:54.651  2356  2356 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.presencemanager.service.INTERNAL_IDENTITY dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentApiService }
+01-20 22:45:54.651   695  1114 V WindowManager: DesktopModeLaunchParamsModifier: phase= 0 task=null activity=ActivityRecord{131501739 u0 com.subscription.poc/.MainActivity display-area-from-current-params=null display-area-from-default-fallback=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 task null, skipping
+01-20 22:45:54.652   695  1114 V WindowManager: TaskLaunchParamsModifier:phase=0 task=null activity=ActivityRecord{131501739 u0 com.subscription.poc/.MainActivity t-1} display-area-from-current-params=null display-area-from-default-fallback=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022
+01-20 22:45:54.652   695  1114 V WindowManager: DesktopModeLaunchParamsModifier: phase= 3 task=null activity=ActivityRecord{131501739 u0 com.subscription.poc/.MainActivity t-1} display-area-from-current-params=null display-area-from-default-fallback=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 task null, skipping
+01-20 22:45:54.652   695  1114 V WindowManager: TaskLaunchParamsModifier:phase=3 task=null activity=ActivityRecord{131501739 u0 com.subscription.poc/.MainActivity t-1} display-area-from-current-params=null display-area-from-default-fallback=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 non-freeform-task-display-area display-area=DefaultTaskDisplayArea@14906022 skip-bounds-fullscreen
+01-20 22:45:54.653   695  1114 V WindowManager: DesktopModeLaunchParamsModifier: phase= 3 task=Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc} activity=ActivityRecord{131501739 u0 com.subscription.poc/.MainActivity t-1} display-from-task=0 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 not entering desktop mode, skipping
+01-20 22:45:54.653   695  1114 V WindowManager: TaskLaunchParamsModifier:phase=3 task=Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc} activity=ActivityRecord{131501739 u0 com.subscription.poc/.MainActivity t-1} display-from-task=0 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 inherit-from-task=fullscreen non-freeform-task-display-area display-area=DefaultTaskDisplayArea@14906022 skip-bounds-fullscreen
+01-20 22:45:54.653   542   606 I libbinder.BpBinder: onLastStrongRef automatically unlinking death recipients for descriptor: '(not cached)'
+01-20 22:45:54.656   695  2141 D CompatChangeReporter: Compat change id reported: 309578419; UID 10218; state: ENABLED
+01-20 22:45:54.658   695  1114 I ActivityTaskManager: Add Task{5dd2e56 #24 type=standard A=10218:com.subscription.poc} to hidden list because adding Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc}
+01-20 22:45:54.658   569   569 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:54.658   569   569 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:54.658   569   569 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:54.661   695  1114 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.subscription.poc/.MainActivity} with LAUNCH_MULTIPLE from uid 2000 (com.android.shell) (BAL_ALLOW_PERMISSION) result code=0
+01-20 22:45:54.666  1172  1172 D BaseActivity: Launcher flags updated: [state_started|state_resumed|state_deferred_resumed|state_window_focused] -[state_user_active]
+01-20 22:45:54.666  1172  1172 D BaseActivity: Launcher flags updated: [state_started|state_window_focused] -[state_resumed|state_deferred_resumed]
+01-20 22:45:54.666  1172  1172 W SplitSelectStateCtor: Missing session instanceIds
+01-20 22:45:54.666  1172  1172 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+01-20 22:45:54.667   695  1866 V WindowManager: Defer transition id=26 for TaskFragmentTransaction=android.os.Binder@ac39ad9
+01-20 22:45:54.668  6142  6196 D WindowOnBackDispatcher: setTopOnBackInvokedCallback (unwrapped): android.view.ViewRootImpl$$ExternalSyntheticLambda12@669d2c3
+01-20 22:45:54.668   695  1866 V WindowManager: deferTransitionReady deferReadyDepth=1 stack=com.android.server.wm.TransitionController.deferTransitionReady:1061 com.android.server.wm.TaskFragmentOrganizerController$TaskFragmentOrganizerState.dispatchTransaction:517 com.android.server.wm.TaskFragmentOrganizerController.dispatchPendingEvents:1259 com.android.server.wm.TaskFragmentOrganizerController.dispatchPendingEvents:1228 com.android.server.wm.RootWindowContainer.performSurfacePlacement:777 
+01-20 22:45:54.668   695   758 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@9197638e does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+01-20 22:45:54.669  1172  1172 D RecentsView: onTaskDisplayChanged: 25, new displayId = 0
+01-20 22:45:54.669   695  1582 V WindowManager: Continue transition id=26 for TaskFragmentTransaction=android.os.Binder@ac39ad9
+01-20 22:45:54.670   695  1582 V WindowManager: continueTransitionReady deferReadyDepth=0 stack=com.android.server.wm.TransitionController.continueTransitionReady:1071 com.android.server.wm.TaskFragmentOrganizerController$TaskFragmentOrganizerState.onTransactionFinished:546 com.android.server.wm.TaskFragmentOrganizerController.onTransactionHandled:740 android.window.ITaskFragmentOrganizerController$Stub.onTransact:225 android.os.Binder.execTransactInternal:1473 
+01-20 22:45:54.674   467   467 D Zygote  : Forked child process 7615
+01-20 22:45:54.674   695   820 D CoreBackPreview: Window{8869d52 u0 Splash Screen com.subscription.poc}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@b4d3c9e, mPriority=0, mIsAnimationCallback=false, mOverrideBehavior=0}
+01-20 22:45:54.674   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:54.676  6142  6183 V WindowManagerShell: Transition requested (#26): android.os.BinderProxy@5cba76c TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=25 effectiveUid=10218 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.subscription.poc/.MainActivity } baseActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} topActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} origActivity=null realActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} numActivities=1 lastActiveTime=153345776 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.os.BinderProxy@e416135} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=ActivityInfo{172b9ca com.subscription.poc.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=false lastNonFullscreenBounds=null capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=503 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false isLeafTask= true eligibleForLetterboxEducation= false isLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 1080, 2400) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatMode=inactive0} topNonResizableActivityAspectRatio=-1.0} topActivityMainWindowFrame=null isAppBubble=false}, pipChange = null, remoteTransition = null, displayChange = null, requestedLocation = null, userChange = null, windowingLayerChange = null, flags = 0, debugId = 26 }
+01-20 22:45:54.676  6142  6183 D ShellSplitScreen: logExit: no-op, mLoggerSessionId is null
+01-20 22:45:54.676  7595  7595 I Monkey  : Events injected: 1
+01-20 22:45:54.683  6142  6183 D WindowManagerShell: setLauncherKeepClearAreaHeight: visible=false, height=495
+01-20 22:45:54.689  1172  1172 D b/417220811: invalidateLoadedTasks - previous requestLoadId: -1
+01-20 22:45:54.689  1172  1172 D b/417220811: invalidateLoadedTasks - previous requestLoadId: -1
+01-20 22:45:54.689   695   766 I ActivityManager: Start proc 7615:com.subscription.poc/u0a218 for next-top-activity {com.subscription.poc/com.subscription.poc.MainActivity}
+01-20 22:45:54.690  7595  7595 I Monkey  : ## Network stats: elapsed time=46ms (0ms mobile, 0ms wifi, 46ms not connected)
+01-20 22:45:54.690  7595  7595 I app_process: System.exit called, status: 0
+01-20 22:45:54.691  7595  7595 I AndroidRuntime: VM exiting with result code 0.
+01-20 22:45:54.693  6142  6183 V ShellTaskOrganizer: Task appeared taskId=25 listener=FullscreenTaskListener
+01-20 22:45:54.693  6142  6183 V ShellTaskOrganizer: Fullscreen Task Appeared: #25
+01-20 22:45:54.693  1172  1172 D b/417220811: invalidateLoadedTasks - previous requestLoadId: -1
+01-20 22:45:54.693   695   755 V WindowManager: Sent Transition (#26) createdAt=01-20 22:45:54.651 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=25 effectiveUid=10218 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.subscription.poc/.MainActivity } baseActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} topActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} origActivity=null realActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} numActivities=1 lastActiveTime=153345776 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{d200377 Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=ActivityInfo{cb9ebe4 com.subscription.poc.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=false lastNonFullscreenBounds=null capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=503 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false isLeafTask= true eligibleForLetterboxEducation= false isLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 1080, 2400) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatMode=inactive0} topNonResizableActivityAspectRatio=-1.0} topActivityMainWindowFrame=null isAppBubble=false}, pipChange = null, remoteTransition = null, displayChange = null, requestedLocation = null, userChange = null, windowingLayerChange = null, flags = 0, debugId = 26 }
+01-20 22:45:54.693   695   755 V WindowManager:     startWCT=WindowContainerTransaction { changes= {} hops= [] errorCallbackToken=null taskFragmentOrganizer=null }
+01-20 22:45:54.693   695   755 V WindowManager:     info={id=26 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+01-20 22:45:54.693   695   755 V WindowManager:         {WCT{RemoteToken{d200377 Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc}}} m=OPEN f=NONE leash=Surface(name=Task=25#307)/@0x64a0b95 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},
+01-20 22:45:54.693   695   755 V WindowManager:         {WCT{RemoteToken{57ffdfd Task{7b051ad #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1#120)/@0x9b48e90 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},
+01-20 22:45:54.693   695   755 V WindowManager:         {m=TO_BACK f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{4a5cfa2}#70)/@0xba236d5 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}
+01-20 22:45:54.693   695   755 V WindowManager:     ]}
+01-20 22:45:54.693  6142  7616 V WindowManagerShell: onTransitionReady(transaction=2985002272879)
+01-20 22:45:54.694  6142  6183 V WindowManagerShell: onTransitionReady (#26) android.os.BinderProxy@5cba76c: {id=26 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+01-20 22:45:54.694  6142  6183 V WindowManagerShell:         {m=OPEN f=NONE leash=Surface(name=Task=25#307)/@0xfeaa896 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},
+01-20 22:45:54.694  6142  6183 V WindowManagerShell:         {m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1#120)/@0x4bac17 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},
+01-20 22:45:54.694  6142  6183 V WindowManagerShell:         {m=TO_BACK f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{4a5cfa2}#70)/@0xf717804 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}
+01-20 22:45:54.694  6142  6183 V WindowManagerShell:     ]}
+01-20 22:45:54.694  6142  6183 V WindowManagerShell: Transition (#26) android.os.BinderProxy@5cba76c@0 ready while (#25) android.os.BinderProxy@9885a5e@0 is still animating. Notify the animating transition in case they can be merged
+01-20 22:45:54.699  1172  1172 D BaseActivity: Launcher flags updated: [state_started] -[state_window_focused]
+01-20 22:45:54.700  6142  6183 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#25) android.os.BinderProxy@9885a5e@0
+01-20 22:45:54.700  5038  5038 D VRI[LockToPortraitUiBuilderHostActivity]: visibilityChanged oldVisibility=true newVisibility=false
+01-20 22:45:54.700  6142  6183 V WindowManagerShell: Playing animation for (#26) android.os.BinderProxy@5cba76c@0
+01-20 22:45:54.700  6142  6183 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+01-20 22:45:54.700  6142  6183 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=26 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{m=OPEN f=NONE leash=Surface(name=Task=25#307)/@0xfeaa896 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},{m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1#120)/@0x4bac17 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},{m=TO_BACK f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{4a5cfa2}#70)/@0xf717804 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}]}
+01-20 22:45:54.700  6142  6183 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=undefined independent=true modes=[CLOSE,TO_BACK] flags=IN_TASK_WITH_EMBEDDED_ACTIVITY mustBeTask=false order=ANY topActivity=null launchCookie=null taskFragmentToken=android.os.BinderProxy@b62979a windowingMode=undefined isCrossDisplayMove=false}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@e47a8cb, appThread = android.app.IApplicationThread$Stub$Proxy@1f2e8a8, debugName = overlayBackTransition }}
+01-20 22:45:54.701  6142  6183 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined isCrossDisplayMove=false},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined isCrossDisplayMove=false}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@1406fc1, appThread = android.app.IApplicationThread$Stub$Proxy@ac29366, debugName = LauncherToDream }}
+01-20 22:45:54.701  6142  6183 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null windowingMode=undefined isCrossDisplayMove=false},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined isCrossDisplayMove=false},{NOT atype=undefined independent=true modes=[] flags=NONE mustBeTask=true order=ANY topActivity=null launchCookie=null customAnim=true windowingMode=undefined isCrossDisplayMove=false}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@4a606a7, appThread = android.app.IApplicationThread$Stub$Proxy@ce1e754, debugName = QuickstepLaunchHome }}
+01-20 22:45:54.701  6142  6183 V WindowManagerShell:  Delegate animation for (#26) to null
+01-20 22:45:54.701  6142  6183 V WindowManagerShell: start default transition animation, info = {id=26 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{m=OPEN f=NONE leash=Surface(name=Task=25#307)/@0xfeaa896 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},{m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1#120)/@0x4bac17 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 winMode=1 userId=0},{m=TO_BACK f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{4a5cfa2}#70)/@0xf717804 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}]}
+01-20 22:45:54.701  6142  6183 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@54f2b3 animAttr=0x13 type=OPEN isEntrance=false
+01-20 22:45:54.701  6142  6183 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@aa2070f animAttr=0x12 type=OPEN isEntrance=true
+01-20 22:45:54.701  6142  6183 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@251d35
+01-20 22:45:54.701   695   755 V WindowManager: Finish Transition (#25): created at 01-20 22:45:54.318 collect-started=0.011ms request-sent=0.047ms started=4.768ms ready=25.364ms sent=37.645ms commit=118.469ms finished=381.735ms
+01-20 22:45:54.709  7615  7615 I Zygote  : Process 7615 created for com.subscription.poc
+01-20 22:45:54.709  7615  7615 I ubscription.poc: Late-enabling -Xcheck:jni
+01-20 22:45:54.714  2356  7484 I NetworkScheduler: (REDACTED) Error inserting %s
+01-20 22:45:54.718  5038  6528 D HWUI    : endAllActiveAnimators on 0xb40000756a238170 (RippleDrawable) with handle 0xb4000076da28d730
+01-20 22:45:54.737  7615  7615 I ubscription.poc: Using CollectorTypeCMC GC.
+01-20 22:45:54.737   695   856 I EventHub: Removing device Monkey touch due to epoll hang-up event.
+01-20 22:45:54.737   695   856 I EventHub: Removed device: path=/dev/input/event13 name=Monkey touch id=17 fd=536 classes=TOUCH | TOUCH_MT
+01-20 22:45:54.739   695   856 I InputReader: Device removed: id=17, eventHubId=17, name='Monkey touch', descriptor='e1fe28b90f915c7d1febbd52c1ef84b3c4cbed9f', sources=TOUCHSCREEN
+01-20 22:45:54.742   695   856 I EventHub: Removing device '/dev/input/event13' due to inotify event
+01-20 22:45:54.748   695   758 D WindowManager: Direct invocation of sendNewConfiguration: Display{#0 state=ON size=1080x2400 ROTATION_0}
+01-20 22:45:54.748   695   758 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:54.750   544   562 I adbd    : jdwp connection from 7615
+01-20 22:45:54.759   695   758 W PermissionService: getPermissionFlags: Unknown user -1
+01-20 22:45:54.759  1370  1370 I PkDeviceHelper: PkDeviceHelper.refreshDevices():87 refreshing devices
+01-20 22:45:54.759  1370  1370 I PkDeviceHelper: PkDeviceHelper.addDevice():125 device qwerty2 added
+01-20 22:45:54.759   695   758 W PermissionService: getPermissionFlags: Unknown user -1
+01-20 22:45:54.773  1172  1172 D b/417220811: invalidateLoadedTasks - previous requestLoadId: -1
+01-20 22:45:54.777  7615  7615 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+01-20 22:45:54.788  6142  6142 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+01-20 22:45:54.804   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:54.972  4258  4400 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+01-20 22:45:54.972  4258  4400 I AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+01-20 22:45:55.014  6142  6183 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#26) android.os.BinderProxy@5cba76c@0
+01-20 22:45:55.014   695   755 V WindowManager: Finish Transition (#26): created at 01-20 22:45:54.651 collect-started=0.007ms request-sent=8.098ms started=25.532ms ready=40.053ms sent=40.461ms commit=21.773ms finished=362.991ms
+01-20 22:45:55.015  1172  1172 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+01-20 22:45:55.015  6142  6183 V WindowManagerShell: Track 0 became idle
+01-20 22:45:55.015  6142  6183 V WindowManagerShell: All active transition animations finished
+01-20 22:45:55.024  6142  6258 D WallpaperService: onVisibilityChanged(false): com.android.systemui.wallpapers.ImageWallpaper$CanvasEngine@c553a46
+01-20 22:45:55.030  1172  1172 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+01-20 22:45:55.182  7615  7615 D nativeloader: Configuring clns-9 for other apk /data/app/~~5Gjd-a6AG9C8gdQGQNrESA==/com.subscription.poc-bmGtHb6l2tMgNOuO5o9BXg==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~5Gjd-a6AG9C8gdQGQNrESA==/com.subscription.poc-bmGtHb6l2tMgNOuO5o9BXg==/lib/arm64:/data/app/~~5Gjd-a6AG9C8gdQGQNrESA==/com.subscription.poc-bmGtHb6l2tMgNOuO5o9BXg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.subscription.poc
+01-20 22:45:55.183  7615  7615 D CompatChangeReporter: Compat change id reported: 202956589; UID 10218; state: ENABLED
+01-20 22:45:55.192  7615  7615 V GraphicsEnvironment: Currently set values for:
+01-20 22:45:55.192  7615  7615 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+01-20 22:45:55.192  7615  7615 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+01-20 22:45:55.192  7615  7615 V GraphicsEnvironment: com.subscription.poc is not listed in per-application setting
+01-20 22:45:55.192  7615  7615 V GraphicsEnvironment: ANGLE allowlist from config: com.dreamgames.royalmatch com.dts.freefiremax com.dxx.firenow com.gramgames.mergedragons com.ludo.king com.mojang.minecraftpe com.my.defense com.nintendo.zaka com.os.airforce com.playrix.fishdomdd.gplay io.teslatech.callbreak jp.konami.prospia net.peakgames.toonblast
+01-20 22:45:55.192  7615  7615 V GraphicsEnvironment: No special selections for ANGLE, returning default driver choice
+01-20 22:45:55.192  7615  7615 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+01-20 22:45:55.204   695  1866 D CompatChangeReporter: Compat change id reported: 324203798; UID 10218; state: ENABLED
+01-20 22:45:55.206   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:55.207   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:55.207  7615  7637 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+01-20 22:45:55.211  7615  7615 D DesktopExperienceFlags: Toggle override initialized to: false
+01-20 22:45:55.214  7615  7615 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+01-20 22:45:55.235   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:55.235   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:55.235   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:55.235   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:55.260  7615  7637 I GFXSTREAM: [eglDisplay.cpp(297)] Opening libGLESv1_CM_emulation.so
+01-20 22:45:55.260  7615  7637 I GFXSTREAM: [eglDisplay.cpp(297)] Opening libGLESv2_emulation.so
+01-20 22:45:55.262  7615  7637 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+01-20 22:45:55.262  7615  7637 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+01-20 22:45:55.283  7615  7615 D CompatChangeReporter: Compat change id reported: 309578419; UID 10218; state: ENABLED
+01-20 22:45:55.283  7615  7615 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+01-20 22:45:55.303  6142  6148 I ndroid.systemui: NativeAlloc concurrent mark compact GC freed 3952KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 24MB/48MB, paused 764us,764us total 796.286ms
+01-20 22:45:55.306  7615  7615 D CompatChangeReporter: Compat change id reported: 349153669; UID 10218; state: ENABLED
+01-20 22:45:55.306  7615  7615 W HWUI    : Unknown dataspace 0
+01-20 22:45:55.357  7615  7615 D VRI[MainActivity]: WindowInsets changed: 1080x2400 statusBars:[0,63,0,0] navigationBars:[0,0,0,63] mandatorySystemGestures:[0,63,0,84] 
+01-20 22:45:55.358  7615  7615 D WindowOnBackDispatcher: setTopOnBackInvokedCallback (unwrapped): android.view.ViewRootImpl$$ExternalSyntheticLambda12@692662b
+01-20 22:45:55.358   695   820 D CoreBackPreview: Window{9402662 u0 com.subscription.poc/com.subscription.poc.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@2fefdc8, mPriority=0, mIsAnimationCallback=false, mOverrideBehavior=0}
+01-20 22:45:55.373  7615  7615 I HWUI    : Using FreeType backend (prop=Auto)
+01-20 22:45:55.418   695   755 I ActivityTaskManager: Displayed com.subscription.poc/.MainActivity for user 0: +769ms
+01-20 22:45:55.418  5038  6262 I Finsky  : [192] com.subscription.poc: Account from first account - [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.419  5038  6262 I Finsky  : [192] Billing preferred account via installer for com.subscription.poc: [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.425  5038  6262 I Finsky  : [192] com.subscription.poc: Account from first account - [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.425  5038  6262 I Finsky  : [192] Billing preferred account via installer for com.subscription.poc: [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.425  5038  6262 I Finsky  : [192] com.subscription.poc: Account from first account - [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.425  5038  6262 I Finsky  : [192] Billing preferred account via installer for com.subscription.poc: [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.425  5038  6262 I Finsky  : [192] com.subscription.poc: Account from first account - [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.425  5038  6262 I Finsky  : [192] Billing preferred account via installer for com.subscription.poc: [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.425  5038 10098 I Finsky  : [230] com.subscription.poc: Account from first account - [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.425  5038 10098 I Finsky  : [230] Billing preferred account via installer for com.subscription.poc: [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.426  5038 10098 I Finsky  : [230] com.subscription.poc: Account from first account - [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.426  5038 10098 I Finsky  : [230] Billing preferred account via installer for com.subscription.poc: [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.430  5038 10098 I Finsky  : [230] com.subscription.poc: Account from first account - [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.430  5038 10098 I Finsky  : [230] Billing preferred account via installer for com.subscription.poc: [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.431  5038  6262 I Finsky  : [192] com.subscription.poc: Account from first account - [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.431  5038  6262 I Finsky  : [192] Billing preferred account via installer for com.subscription.poc: [45LVyNqZQRJxJa0PQ7THO2YjtvQAVrOdN8ihUPIOOx4]
+01-20 22:45:55.432  5038  5038 D WindowOnBackDispatcher: setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@a724ddb
+01-20 22:45:55.432   695   820 D CoreBackPreview: Window{f66b3c6 u0 com.android.vending/com.google.android.finsky.billing.acquire.LockToPortraitUiBuilderHostActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@a29b85b, mPriority=-1, mIsAnimationCallback=false, mOverrideBehavior=0}
+01-20 22:45:55.436  5038  5038 D WindowOnBackDispatcher: setTopOnBackInvokedCallback (unwrapped): null
+01-20 22:45:55.437  1172  1172 D BaseActivity: Launcher flags updated: [] -[state_started]
+01-20 22:45:55.437  1172  1172 D BaseDepthController: setSurface:
+01-20 22:45:55.437  1172  1172 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+01-20 22:45:55.437  1172  1172 D BaseDepthController: 	mBaseSurface: null
+01-20 22:45:55.437  1172  1172 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+01-20 22:45:55.438  1172  1172 D LauncherStateManager: StateManager.goToState: fromState: Normal, toState: Normal, partial trace:
+01-20 22:45:55.438  1172  1172 D LauncherStateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 7101499b44b219b757f6885b35ae099b24fc769225595efcaaacae5b0f94500b:6)
+01-20 22:45:55.438  1172  1172 D LauncherStateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 7101499b44b219b757f6885b35ae099b24fc769225595efcaaacae5b0f94500b:2)
+01-20 22:45:55.438  1172  1172 D LauncherStateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 7101499b44b219b757f6885b35ae099b24fc769225595efcaaacae5b0f94500b:32)
+01-20 22:45:55.438  1172  1172 D LauncherStateManager: StateManager.onRepeatStateSetAborted: state: Normal
+01-20 22:45:55.438  1172  1172 D ActivityContext: hideKeyboard
+01-20 22:45:55.438  1172  1172 D ActivityContext: isImeShown: false
+01-20 22:45:55.438  1172  1172 D StatsLog: LAUNCHER_ONSTOP
+01-20 22:45:55.439  1172  1172 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+01-20 22:45:55.441   695  2141 D CoreBackPreview: Window{f66b3c6 u0 com.android.vending/com.google.android.finsky.billing.acquire.LockToPortraitUiBuilderHostActivity}: Setting back callback null
+01-20 22:45:55.442  5038  5038 D ViewRootImpl: Skipping stats log for color mode
+01-20 22:45:55.450   695   862 I ImeTracker: com.subscription.poc:d31d3bc1: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+01-20 22:45:55.451  6142  6183 V ShellTaskOrganizer: Task vanished taskId=24
+01-20 22:45:55.451  6142  6183 V ShellTaskOrganizer: Fullscreen Task Vanished: #24
+01-20 22:45:55.452  6142  6183 D ShellDesktopMode: AppToWebRepository: Task 24 is vanishing. Removing task data from repository
+01-20 22:45:55.452   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:55.452  1172  1172 D b/417220811: invalidateLoadedTasks - previous requestLoadId: -1
+01-20 22:45:55.452   695  1114 I ImeTracker: system_server:176b2a3c: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+01-20 22:45:55.452  1370  1370 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2092 
+01-20 22:45:55.452  1370  1370 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+01-20 22:45:55.453  1370  1370 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1349 onStartInput(EditorInfo{EditorInfo{packageName=com.subscription.poc, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+01-20 22:45:55.453  1370  1370 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+01-20 22:45:55.454  1172  1172 D RecentsView: onTaskRemoved: 24, not handling task stack changes
+01-20 22:45:55.455  1172  1172 D RecentsView: onTaskRemoved: 24, not handling task stack changes
+01-20 22:45:55.455   695   953 D BackgroundInstallControlService: Package event received: 0
+01-20 22:45:55.455   695   758 I ImeTracker: system_server:176b2a3c: onCancelled at PHASE_SERVER_SHOULD_HIDE
+01-20 22:45:55.456   695  1114 W PackageConfigPersister: App-specific configuration not found for packageName: com.subscription.poc and userId: 0
+01-20 22:45:55.457  7615  7615 D InsetsController: hide(ime())
+01-20 22:45:55.457  7615  7615 I ImeTracker: com.subscription.poc:d31d3bc1: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+01-20 22:45:55.798   569   569 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:55.799   569   569 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:55.799   569   569 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:55.800  6142  6196 D WindowOnBackDispatcher: setTopOnBackInvokedCallback (unwrapped): null
+01-20 22:45:55.801   695  2141 D CoreBackPreview: Window{8869d52 u0 Splash Screen com.subscription.poc EXITING}: Setting back callback null
+01-20 22:45:55.805  2356  2430 I FontLog : (REDACTED) Received query %s, URI %s
+01-20 22:45:55.805  2356  2430 I FontLog : (REDACTED) Query [%s] resolved to %s
+01-20 22:45:55.809  2356  2430 I FontLog : (REDACTED) Fetch %s end status %s
+01-20 22:45:55.815  2356  2430 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+01-20 22:45:55.818  2356  2430 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+01-20 22:45:55.947  7615  7622 I ubscription.poc: Compiler allocated 5145KB to compile void android.view.ViewRootImpl.performTraversals()
+01-20 22:45:56.003  5038  5094 D PaySecureElementClient: Felica app not found; returning isSecureElementAvailable = false!
+01-20 22:45:56.006   695  2141 D BiometricService: canAuthenticate: User=0, Caller=0, Authenticators=15
+01-20 22:45:56.007   695  2141 D BiometricService/PreAuthInfo: Package: com.android.vending Sensor ID: 0 Modality: 2 User id: 0 Status: 7
+01-20 22:45:56.007   695  2141 D BiometricService/PreAuthInfo: getCanAuthenticateInternal Modality: 2 AuthenticatorStatus: 7
+01-20 22:45:56.007   695  2141 D AuthService: canAuthenticate, userId: 0, callingUserId: 0, authenticators: 15, result: 11
+01-20 22:45:56.007   695   820 D BiometricService: canAuthenticate: User=0, Caller=0, Authenticators=32768
+01-20 22:45:56.007   695   820 D BiometricService/PreAuthInfo: getCanAuthenticateInternal Modality: 1 AuthenticatorStatus: 9
+01-20 22:45:56.007   695   820 D AuthService: canAuthenticate, userId: 0, callingUserId: 0, authenticators: 32768, result: 11
+01-20 22:45:56.007   695   820 D BiometricService: canAuthenticate: User=0, Caller=0, Authenticators=15
+01-20 22:45:56.007   695   820 D BiometricService/PreAuthInfo: Package: com.android.vending Sensor ID: 0 Modality: 2 User id: 0 Status: 7
+01-20 22:45:56.007   695   820 D BiometricService/PreAuthInfo: getCanAuthenticateInternal Modality: 2 AuthenticatorStatus: 7
+01-20 22:45:56.007   695   820 D AuthService: canAuthenticate, userId: 0, callingUserId: 0, authenticators: 15, result: 11
+01-20 22:45:56.008   695  2141 D BiometricService: canAuthenticate: User=0, Caller=0, Authenticators=15
+01-20 22:45:56.008   695  2141 D BiometricService/PreAuthInfo: Package: com.android.vending Sensor ID: 0 Modality: 2 User id: 0 Status: 7
+01-20 22:45:56.008   695  2141 D BiometricService/PreAuthInfo: getCanAuthenticateInternal Modality: 2 AuthenticatorStatus: 7
+01-20 22:45:56.008   695  2141 D AuthService: canAuthenticate, userId: 0, callingUserId: 0, authenticators: 15, result: 11
+01-20 22:45:56.010   695  2141 D BiometricService: canAuthenticate: User=0, Caller=0, Authenticators=15
+01-20 22:45:56.010   695  2141 D BiometricService/PreAuthInfo: Package: com.android.vending Sensor ID: 0 Modality: 2 User id: 0 Status: 7
+01-20 22:45:56.010   695  2141 D BiometricService/PreAuthInfo: getCanAuthenticateInternal Modality: 2 AuthenticatorStatus: 7
+01-20 22:45:56.010   695  2141 D AuthService: canAuthenticate, userId: 0, callingUserId: 0, authenticators: 15, result: 11
+01-20 22:45:56.396  5038  7598 I FA      : Application backgrounded at: timestamp_millis: 1768967154394
+01-20 22:45:56.455   695   897 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+01-20 22:45:56.893   695   764 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:56.990   695   764 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:57.206   475 14191 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 975936
+01-20 22:45:57.206   475 14191 D android.hardware.audio@7.1-impl.ranchu: ~TinyalsaSink: joining consumeThread
+01-20 22:45:57.215   475  7589 D android.hardware.audio@7.1-impl.ranchu: consumeThread: exiting
+01-20 22:45:57.215   475 14191 D android.hardware.audio@7.1-impl.ranchu: ~TinyalsaSink: stopping PCM stream
+01-20 22:45:57.961   695   764 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+01-20 22:45:58.665   695  1548 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-20 22:45:59.461   695   897 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+01-20 22:46:00.340  7615  7615 D BillingDiagnostic: Launching billing flow for product: premium_access, offer: ASivcibSPrhxRFIqdliyg479ggib7n6GBGA9vIHhitBvadIi6e+8LgKp5QKRHX36rBLVk8cEg1UKqpX9mY7+Ay4tv8lDNF8=
+01-20 22:46:00.348   695   820 V WindowManager: DesktopModeLaunchParamsModifier: phase= 0 task=null activity=null display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 task null, skipping
+01-20 22:46:00.348   695   820 V WindowManager: TaskLaunchParamsModifier:phase=0 task=null activity=null display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022
+01-20 22:46:00.349   695   820 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@9197638e does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+01-20 22:46:00.355   695   820 V WindowManager: DesktopModeLaunchParamsModifier: phase= 0 task=null activity=ActivityRecord{39442321 u0 com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 task null, skipping
+01-20 22:46:00.355   695   820 V WindowManager: TaskLaunchParamsModifier:phase=0 task=null activity=ActivityRecord{39442321 u0 com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity t-1} display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022
+01-20 22:46:00.355   695   820 V WindowManager: DesktopModeLaunchParamsModifier: phase= 3 task=Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc} activity=ActivityRecord{39442321 u0 com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity t-1} display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 not entering desktop mode, skipping
+01-20 22:46:00.355   695   820 V WindowManager: TaskLaunchParamsModifier:phase=3 task=Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc} activity=ActivityRecord{39442321 u0 com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity t-1} display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 inherit-from-source=fullscreen non-freeform-task-display-area display-area=DefaultTaskDisplayArea@14906022 skip-bounds-fullscreen
+01-20 22:46:00.356   695   820 V WindowManager: DesktopModeLaunchParamsModifier: phase= 3 task=Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc} activity=ActivityRecord{39442321 u0 com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity t-1} display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 not entering desktop mode, skipping
+01-20 22:46:00.356   695   820 V WindowManager: TaskLaunchParamsModifier:phase=3 task=Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc} activity=ActivityRecord{39442321 u0 com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity t-1} display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 inherit-from-source=fullscreen non-freeform-task-display-area display-area=DefaultTaskDisplayArea@14906022 skip-bounds-fullscreen
+01-20 22:46:00.356   695   820 V WindowManager: DesktopModeLaunchParamsModifier: phase= 3 task=Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc} activity=ActivityRecord{39442321 u0 com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity t-1} display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 not entering desktop mode, skipping
+01-20 22:46:00.356   695   820 V WindowManager: TaskLaunchParamsModifier:phase=3 task=Task{bfb9ac6 #25 type=standard A=10218:com.subscription.poc} activity=ActivityRecord{39442321 u0 com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity t-1} display-area-from-source=DefaultTaskDisplayArea@14906022 display-id=0 task-display-area-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@14906022 inherit-from-source=fullscreen non-freeform-task-display-area display-area=DefaultTaskDisplayArea@14906022 skip-bounds-fullscreen
+01-20 22:46:00.359   695   820 I ActivityTaskManager: START u0 {xflg=0x4 cmp=com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity (has extras)} with LAUNCH_MULTIPLE from uid 10218 (com.subscription.poc) (sr=131501739) (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+01-20 22:46:00.360  6142  6183 V WindowManagerShell: Transition requested (#27): android.os.BinderProxy@4dc408a TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=25 effectiveUid=10218 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.subscription.poc/.MainActivity } baseActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} topActivity=ComponentInfo{com.subscription.poc/com.android.billingclient.api.ProxyBillingActivity} origActivity=null realActivity=ComponentInfo{com.subscription.poc/com.subscription.poc.MainActivity} numActivities=2 lastActiveTime=153351473 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.os.BinderProxy@e416135} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=ActivityInfo{22db6fb com.android.billingclient.api.ProxyBillingActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=true isActivityStackTransparent=false lastNonFullscreenBounds=null capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=503 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false isLeafTask= true eligibleForLetterboxEducation= false isLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 1080, 2400) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatMode=inactive0} topNonResizableActivityAspectRatio=-1.0} topActivityMainWindowFrame=null isAppBubble=false}, pipChange = null, remoteTransition = null, displayChange = null, requestedLocation = null, userChange = null, windowingLayerChange = null, flags = 0, debugId = 27 }
+01-20 22:46:00.368  6142  6183 D ShellSplitScreen: logExit: no-op, mLoggerSessionId is null
+01-20 22:46:00.387   542   609 I libbinder.BpBinder: onLastStrongRef automatically unlinking death recipients for descriptor: '(not cached)'

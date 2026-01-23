@@ -239,7 +239,7 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                                     Box(modifier = Modifier.width(280.dp)) {
                                         SubscriptionCard(
                                             subscriptionPlan = plan,
-                                            onPurchaseClick = { activity?.let { viewModel.purchaseSubscription(it, plan.productId) } },
+                                            onPurchaseClick = { activity?.let { viewModel.purchaseSubscription(it, "${plan.productId}:${plan.basePlanId}") } },
                                             isPurchasing = uiState.purchaseInProgress,
                                         )
                                     }
@@ -290,7 +290,7 @@ fun SubscriptionScreen(viewModel: SubscriptionViewModel = hiltViewModel()) {
                                     subscriptionPlan = plan,
                                     onPurchaseClick = {
                                         activity?.let {
-                                            viewModel.purchaseSubscription(it, plan.productId)
+                                            viewModel.purchaseSubscription(it, "${plan.productId}:${plan.basePlanId}")
                                         }
                                     },
                                     isPurchasing = uiState.purchaseInProgress,

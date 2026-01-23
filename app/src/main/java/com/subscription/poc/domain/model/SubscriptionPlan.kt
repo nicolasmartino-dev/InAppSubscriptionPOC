@@ -2,6 +2,8 @@ package com.subscription.poc.domain.model
 
 data class SubscriptionPlan(
     val productId: String,
+    val basePlanId: String,
+    val offerToken: String,
     val name: String,
     val description: String,
     val priceFormatted: String,
@@ -13,3 +15,4 @@ data class SubscriptionPlan(
     val isPaused: Boolean = false,
     val isOnHold: Boolean = false,
 )
+
