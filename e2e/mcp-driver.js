@@ -46,25 +46,41 @@ async function main() {
         });
 
         // Wait for launch
+        // Wait for launch - increased to 15s to handle "System UI not responding" or slow cold boot
         console.log("Waiting for app launch...");
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve, 15000));
 
         // 4. Verify UI State (Semantic Check)
         console.log("Checking UI elements...");
 
-        // mobile_dump_ui returns the hierarchy. 
-        // We assume it returns a string or structured object in 'content'.
-        const uiResult = await client.callTool({
-            name: "mobile_dump_ui",
-            arguments: {}
-        });
-
-        // The content could be a JSON string or XML string.
-        const uiContent = uiResult.content[0].text;
-        console.log("UI Dump received (truncated):", uiContent.substring(0, 200) + "...");
-
+        const maxRetries = 5;
+        let uiContent = "";
+        let found = false;
         const requiredText = ["Subscribe", "First Subscription"]; // Adjust based on expected UI
-        const found = requiredText.some(text => uiContent.includes(text));
+
+        for (let i = 0; i < maxRetries; i++) {
+            console.log(`Attempt ${i + 1}/${maxRetries} to read UI...`);
+            const uiResult = await client.callTool({
+                name: "mobile_dump_ui",
+                arguments: {}
+            });
+
+            uiContent = uiResult.content[0].text;
+
+            // Check for potential ANR or Empty state or System UI dialog
+            if (uiContent.includes("isn't responding") || uiContent.includes("Close app")) {
+                console.log("WARNING: Detected ANR dialog. Waiting 5s...");
+                // In a perfect world we would click "Wait", but for now just wait.
+                await new Promise(resolve => setTimeout(resolve, 5000));
+                continue;
+            }
+
+            found = requiredText.some(text => uiContent.includes(text));
+            if (found) break;
+
+            console.log("Expected text not found yet, retrying in 3s...");
+            await new Promise(resolve => setTimeout(resolve, 3000));
+        }
 
         if (found) {
             console.log("SUCCESS: Found subscription elements on screen.");
