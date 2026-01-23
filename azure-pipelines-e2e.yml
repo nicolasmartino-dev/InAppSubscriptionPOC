@@ -171,11 +171,19 @@ stages:
             displayName: 'Launch App'
 
           # Run E2E test
+          # Run E2E Test using Mobile MCP
+          # --------------------------------------------------------
           - script: |
-              export ANDROID_SDK_ROOT="$ANDROID_SDK_ROOT"
-              export ANDROID_SERIAL="emulator-5554"
-              node $(System.DefaultWorkingDirectory)/e2e/subscription-screen-test.js
-            displayName: 'Run E2E Test'
+              echo "=== Running Mobile MCP E2E Test ==="
+              cd e2e
+              npm install
+              # Add platform-tools to PATH for mobile-mcp
+              export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
+              # In CI, we need to ensure the emulator is fully ready before starting the MCP driver.
+              # The previous 'Create and Start Emulator' step puts it in bg, we wait a bit here to be safe.
+              sleep 10
+              node mcp-driver.js
+            displayName: 'Run Mobile MCP E2E Test'
 
           # Capture screenshot as artifact
           - script: |

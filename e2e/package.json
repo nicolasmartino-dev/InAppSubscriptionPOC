@@ -1,0 +1,14 @@
+{
+    "name": "e2e-mcp-tests",
+    "version": "1.0.0",
+    "description": "E2E tests using Mobile MCP",
+    "main": "mcp-driver.js",
+    "scripts": {
+        "test": "node mcp-driver.js"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.25.3",
+        "mobile-mcp": "^0.0.7",
+        "zod": "^3.22.4"
+    }
+}
