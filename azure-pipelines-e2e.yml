@@ -172,23 +172,24 @@ stages:
               "$ANDROID_SDK_ROOT/platform-tools/adb" install app/build/outputs/apk/debug/app-debug.apk
             displayName: 'Install App on Emulator'
 
-          # Launch app
-          - script: |
-              "$ANDROID_SDK_ROOT/platform-tools/adb" shell am start -n com.subscription.poc/.MainActivity
-              sleep 5
-            displayName: 'Launch App'
-
           # Proactive Fix: Clear any "System UI not responding" or ANR dialogs
+          # Move this BEFORE launch to avoid backgrounding the app after it starts
           - script: |
               echo "=== Clearing System Dialogs ==="
               ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
               # Broadcast to close system dialogs
-              "$ADB" shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS
+              "$ADB" shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS || true
               # Simulate ESC key to dismiss focus blocks
-              "$ADB" shell input keyevent 111 
+              "$ADB" shell input keyevent 111 || true
               # Let the system stabilize
               sleep 10
             displayName: 'Clear System Dialogs'
+
+          # Launch app
+          - script: |
+              "$ANDROID_SDK_ROOT/platform-tools/adb" shell am start -n com.subscription.poc/.MainActivity
+              sleep 10
+            displayName: 'Launch App'
 
           # Run E2E test
           # Run E2E Test using Mobile MCP

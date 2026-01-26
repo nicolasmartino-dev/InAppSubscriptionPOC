@@ -67,10 +67,9 @@ async function main() {
 
             uiContent = uiResult.content[0].text;
 
-            // Check for potential ANR or Empty state or System UI dialog
+            // Check for potential ANR or System UI dialog
             if (uiContent.includes("isn't responding") || uiContent.includes("Close app")) {
                 console.log("WARNING: Detected ANR dialog. Waiting 5s...");
-                // In a perfect world we would click "Wait", but for now just wait.
                 await new Promise(resolve => setTimeout(resolve, 5000));
                 continue;
             }
@@ -78,8 +77,18 @@ async function main() {
             found = requiredText.some(text => uiContent.includes(text));
             if (found) break;
 
-            console.log("Expected text not found yet, retrying in 3s...");
-            await new Promise(resolve => setTimeout(resolve, 3000));
+            // SELF-HEALING: If we are not on the app (e.g. Home Screen), try to re-launch it
+            if (uiContent.includes("Home") || uiContent.includes("Chrome") || uiContent.includes("Phone")) {
+                console.log("Detecting Home screen or other app. Proactively Re-launching target app...");
+                await client.callTool({
+                    name: "mobile_open_app",
+                    arguments: { packageName: "com.subscription.poc" }
+                });
+                await new Promise(resolve => setTimeout(resolve, 5000));
+            } else {
+                console.log("Expected text not found yet, retrying in 3s...");
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            }
         }
 
         if (found) {
