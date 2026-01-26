@@ -46,9 +46,9 @@ async function main() {
         });
 
         // Wait for launch
-        // Wait for launch - increased to 15s to handle "System UI not responding" or slow cold boot
-        console.log("Waiting for app launch...");
-        await new Promise(resolve => setTimeout(resolve, 15000));
+        // Wait for launch - increased to 30s for slow CI environments to handle "System UI not responding"
+        console.log("Waiting for app launch and system stabilization...");
+        await new Promise(resolve => setTimeout(resolve, 30000));
 
         // 4. Verify UI State (Semantic Check)
         console.log("Checking UI elements...");

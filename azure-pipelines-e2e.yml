@@ -178,6 +178,18 @@ stages:
               sleep 5
             displayName: 'Launch App'
 
+          # Proactive Fix: Clear any "System UI not responding" or ANR dialogs
+          - script: |
+              echo "=== Clearing System Dialogs ==="
+              ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
+              # Broadcast to close system dialogs
+              "$ADB" shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS
+              # Simulate ESC key to dismiss focus blocks
+              "$ADB" shell input keyevent 111 
+              # Let the system stabilize
+              sleep 10
+            displayName: 'Clear System Dialogs'
+
           # Run E2E test
           # Run E2E Test using Mobile MCP
           # --------------------------------------------------------
