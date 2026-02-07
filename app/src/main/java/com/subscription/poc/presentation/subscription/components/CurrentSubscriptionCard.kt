@@ -21,6 +21,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.subscription.poc.domain.model.SubscriptionPlan
@@ -35,7 +37,25 @@ fun CurrentSubscriptionCard(
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer
         ),
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .semantics(mergeDescendants = true) {
+                contentDescription = buildString {
+                    append("Current Subscriptions. ")
+                    activeSubscriptions.forEach { plan ->
+                        append("${plan.name}. ")
+                        if (plan.priceFormatted.isNotEmpty()) {
+                            append("${plan.priceFormatted} per ${plan.billingPeriod ?: "period"}. ")
+                        }
+                        if (!plan.isAutoRenewing) append("Canceled. ")
+                        if (plan.isPaused) append("Paused. ")
+                        if (plan.isOnHold) append("On Hold. ")
+                    }
+                    if (activeSubscriptions.size > 1) {
+                        append("Multiple plans active. Review needed.")
+                    }
+                }
+            },
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {

@@ -39,7 +39,19 @@ fun SubscriptionCard(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .semantics(mergeDescendants = true) { },
+            .semantics(mergeDescendants = true) { 
+                contentDescription = buildString {
+                    append(subscriptionPlan.name)
+                    append(". ${subscriptionPlan.priceFormatted}.")
+                    if (subscriptionPlan.billingPeriod != null) {
+                        append(" ${subscriptionPlan.billingPeriod}.")
+                    }
+                    append(" ${subscriptionPlan.description}.")
+                    if (subscriptionPlan.isActive) {
+                        append(" Currently active.")
+                    }
+                }
+            },
         colors =
             CardDefaults.cardColors(
                 containerColor =
