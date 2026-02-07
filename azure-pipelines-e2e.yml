@@ -197,7 +197,14 @@ stages:
           - script: |
               echo "=== Running Mobile MCP E2E Test ==="
               cd e2e
-              npm install
+              # Ensure a clean slate in case of stale cache
+              rm -rf node_modules package-lock.json
+              npm install --no-package-lock
+              
+              # Debug: Verify dependency existence
+              echo "Checking for @opentelemetry/api..."
+              ls -l node_modules/@opentelemetry/api/build/src/index.js || echo "!!! @opentelemetry/api NOT FOUND !!!"
+              
               # Add platform-tools to PATH for mobile-mcp
               export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
               # In CI, we need to ensure the emulator is fully ready before starting the MCP driver.
@@ -205,6 +212,8 @@ stages:
               sleep 10
               node mcp-driver.js
             displayName: 'Run Mobile MCP E2E Test'
+            env:
+              NODE_OPTIONS: "--trace-warnings"
 
           # Capture screenshot as artifact
           - script: |
