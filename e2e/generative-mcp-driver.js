@@ -54,21 +54,28 @@ async function main() {
 
         const rawUiContent = uiResult.content[0].text;
 
-        // Simplify XML to save tokens
+        // Simplify XML more aggressively to save tokens
+        // Use \s* to handle any whitespace or newlines before attributes
         const uiContent = rawUiContent
-            .replace(/ bounds="[^"]*"/g, "")      // Remove bounds
-            .replace(/ package="[^"]*"/g, "")     // Remove package
-            .replace(/ index="[^"]*"/g, "")       // Remove index
-            .replace(/ (focusable|clickable|enabled|focused|scrollable|long-clickable|password|selected|checkable|checked)="[^"]*"/g, "") // Remove common bool flags
-            .replace(/\s+/g, " ")                 // Collapse whitespace
+            .replace(/\s+bounds="[^"]*"/g, "")
+            .replace(/\s+package="[^"]*"/g, "")
+            .replace(/\s+index="[^"]*"/g, "")
+            .replace(/\s+class="[^"]*"/g, "")
+            .replace(/\s+(focusable|clickable|enabled|focused|scrollable|long-clickable|password|selected|checkable|checked)="[^"]*"/g, "")
+            .replace(/\s+naf="[^"]*"/g, "")
+            .replace(/\s+/g, " ")
             .trim();
 
         console.log(`🤖 UI Dump simplified: ${rawUiContent.length} chars -> ${uiContent.length} chars`);
-        console.log("🤖 Asking LLM to verify screen content...");
+        if (uiContent.length === rawUiContent.length && rawUiContent.length > 100) {
+            console.warn("⚠️ Warning: XML simplification did not reduce character count. Check input format.");
+        }
+
+        console.log("🤖 Asking LLM (gemini-1.5-flash) to verify screen content...");
         const llmStartTime = Date.now();
 
         const { text } = await generateText({
-            model: google('gemini-2.0-flash'),
+            model: google('gemini-1.5-flash'),
             prompt: `
             Analyze the following simplified Android UI dump from a subscription screen.
             Verify if:
@@ -96,7 +103,7 @@ async function main() {
             result = JSON.parse(text.replace(/```json|```/g, "").trim());
         } catch (e) {
             console.error("❌ Failed to parse LLM Response:", text);
-            result = { passed: false, reason: "Invalid LLM output format" };
+            result = { passed: false, reason: "Invalid LLM output format: " + text.substring(0, 100) };
         }
 
         if (result.passed) {
