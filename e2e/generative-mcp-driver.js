@@ -53,23 +53,50 @@ async function main() {
         });
 
         const rawUiContent = uiResult.content[0].text;
+        let uiContent = rawUiContent;
 
-        // Simplify XML even more aggressively
-        // Handles single or double quotes, and matches any whitespace/newlines
-        const uiContent = rawUiContent
-            .replace(/\s+bounds=['"][^'"]*['"]/g, "")
-            .replace(/\s+package=['"][^'"]*['"]/g, "")
-            .replace(/\s+index=['"][^'"]*['"]/g, "")
-            .replace(/\s+class=['"][^'"]*['"]/g, "")
-            .replace(/\s+(focusable|clickable|enabled|focused|scrollable|long-clickable|password|selected|checkable|checked)=['"][^'"]*['"]/g, "")
-            .replace(/\s+naf=['"][^'"]*['"]/g, "")
-            .replace(/\s+/g, " ")
-            .trim();
+        try {
+            // Check if it's JSON (the logs show it often is in this environment)
+            if (rawUiContent.trim().startsWith('{') || rawUiContent.trim().startsWith('[')) {
+                console.log("🤖 JSON UI Dump detected. Simplifying JSON...");
+                const jsonObj = JSON.parse(rawUiContent);
+
+                // Recursive function to strip non-essential keys from JSON
+                const simplifyJson = (obj) => {
+                    if (Array.isArray(obj)) return obj.map(simplifyJson);
+                    if (obj !== null && typeof obj === 'object') {
+                        const newObj = {};
+                        for (const key in obj) {
+                            // Keep 'type', 'text', 'children', and 'contentDescription'
+                            if (['type', 'text', 'children', 'contentDescription', 'resource-id'].includes(key)) {
+                                newObj[key] = simplifyJson(obj[key]);
+                            }
+                        }
+                        return newObj;
+                    }
+                    return obj;
+                };
+
+                uiContent = JSON.stringify(simplifyJson(jsonObj));
+            } else {
+                console.log("🤖 XML UI Dump detected. Simplifying XML...");
+                uiContent = rawUiContent
+                    .replace(/\s+bounds=['"][^'"]*['"]/g, "")
+                    .replace(/\s+package=['"][^'"]*['"]/g, "")
+                    .replace(/\s+index=['"][^'"]*['"]/g, "")
+                    .replace(/\s+class=['"][^'"]*['"]/g, "")
+                    .replace(/\s+(focusable|clickable|enabled|focused|scrollable|long-clickable|password|selected|checkable|checked)=['"][^'"]*['"]/g, "")
+                    .replace(/\s+naf=['"][^'"]*['"]/g, "")
+                    .replace(/\s+/g, " ")
+                    .trim();
+            }
+        } catch (e) {
+            console.warn("⚠️ Warning: Failed to simplify UI content. Using raw data.", e.message);
+        }
 
         console.log(`🤖 UI Dump simplified: ${rawUiContent.length} chars -> ${uiContent.length} chars`);
         if (uiContent.length === rawUiContent.length && rawUiContent.length > 200) {
-            console.warn("⚠️ Warning: XML simplification did not reduce character count.");
-            console.log("🔍 Sample of raw UI content (First 300 chars):", rawUiContent.substring(0, 300));
+            console.warn("⚠️ Warning: Simplification did not reduce character count.");
         }
 
         console.log("🤖 Asking LLM (gemini-flash-latest) to verify screen content...");
@@ -78,10 +105,10 @@ async function main() {
         const { text } = await generateText({
             model: google('gemini-flash-latest'),
             prompt: `
-            Analyze the following simplified Android UI dump from a subscription screen.
+            Analyze the following UI dump (JSON or XML) from a subscription screen.
             Verify if:
             1. The screen title contains "Choose Your Plan".
-            2. There are at least 3 subscription plans mentioned.
+            2. There are at least 2 distinct subscription plans mentioned (e.g. "First Subscription", "Second Subscription").
             3. One of the plans is "First Subscription" (Mock).
             
             Respond ONLY with a JSON object:
