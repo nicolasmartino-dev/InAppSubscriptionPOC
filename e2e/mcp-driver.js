@@ -56,7 +56,7 @@ async function main() {
         const maxRetries = 5;
         let uiContent = "";
         let found = false;
-        const requiredText = ["Subscribe", "First Subscription"]; // Adjust based on expected UI
+        const requiredText = ["Choose Your Plan", "First Subscription", "Subscribe"];
 
         for (let i = 0; i < maxRetries; i++) {
             console.log(`Attempt ${i + 1}/${maxRetries} to read UI...`);
@@ -65,7 +65,32 @@ async function main() {
                 arguments: {}
             });
 
-            uiContent = uiResult.content[0].text;
+            const rawUiContent = uiResult.content[0].text;
+
+            // Handle JSON vs XML for text extraction
+            if (rawUiContent.trim().startsWith('{') || rawUiContent.trim().startsWith('[')) {
+                try {
+                    // For JSON, we can just stringify it to check for existence of text, 
+                    // or recursively search for 'text' fields.
+                    // Recursive search is safer for specific matches.
+                    const jsonObj = JSON.parse(rawUiContent);
+                    const extractText = (obj) => {
+                        let texts = [];
+                        if (Array.isArray(obj)) obj.forEach(o => texts.push(...extractText(o)));
+                        else if (obj !== null && typeof obj === 'object') {
+                            if (obj.text) texts.push(obj.text);
+                            if (obj.children) texts.push(...extractText(obj.children));
+                            if (obj.contentDescription) texts.push(obj.contentDescription);
+                        }
+                        return texts;
+                    };
+                    uiContent = extractText(jsonObj).join(" ");
+                } catch (e) {
+                    uiContent = rawUiContent; // Fallback
+                }
+            } else {
+                uiContent = rawUiContent;
+            }
 
             // Check for potential ANR or System UI dialog
             if (uiContent.includes("isn't responding") || uiContent.includes("Close app")) {
@@ -74,11 +99,16 @@ async function main() {
                 continue;
             }
 
-            found = requiredText.some(text => uiContent.includes(text));
-            if (found) break;
+            // Case-insensitive check
+            found = requiredText.some(text => uiContent.toLowerCase().includes(text.toLowerCase()));
+            if (found) {
+                console.log(`✅ Match found for one of: ${requiredText.join(", ")}`);
+                break;
+            }
 
             // SELF-HEALING: If we are not on the app (e.g. Home Screen), try to re-launch it
-            if (uiContent.includes("Home") || uiContent.includes("Chrome") || uiContent.includes("Phone")) {
+            // Only use rawUiContent for this check to avoid triggering on app content
+            if (rawUiContent.includes("Home") || rawUiContent.includes("Chrome") || rawUiContent.includes("Phone")) {
                 console.log("Detecting Home screen or other app. Proactively Re-launching target app...");
                 await client.callTool({
                     name: "mobile_open_app",
