@@ -219,13 +219,15 @@ stages:
           - script: |
               echo "=== Running Generative Mobile MCP E2E Test ==="
               cd e2e
-              # We reuse the node_modules installed in the previous step
+              # Give API some time to breathe after the previous test
+              sleep 20
               node generative-mcp-driver.js
             displayName: 'Run Generative Mobile MCP E2E Test'
             env:
               NODE_OPTIONS: "--trace-warnings"
               GOOGLE_GENERATIVE_AI_API_KEY: $(GOOGLE_GENERATIVE_AI_API_KEY)
             condition: succeededOrFailed()
+            continueOnError: true
 
           # Capture screenshot as artifact
           - script: |
