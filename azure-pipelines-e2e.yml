@@ -211,9 +211,21 @@ stages:
               # The previous 'Create and Start Emulator' step puts it in bg, we wait a bit here to be safe.
               sleep 10
               node mcp-driver.js
-            displayName: 'Run Mobile MCP E2E Test'
+            displayName: 'Run Deterministic Mobile MCP E2E Test'
             env:
               NODE_OPTIONS: "--trace-warnings"
+
+          # Run Generative E2E test
+          - script: |
+              echo "=== Running Generative Mobile MCP E2E Test ==="
+              cd e2e
+              # We reuse the node_modules installed in the previous step
+              node generative-mcp-driver.js
+            displayName: 'Run Generative Mobile MCP E2E Test'
+            env:
+              NODE_OPTIONS: "--trace-warnings"
+              GOOGLE_GENERATIVE_AI_API_KEY: $(GOOGLE_GENERATIVE_AI_API_KEY)
+            condition: succeededOrFailed()
 
           # Capture screenshot as artifact
           - script: |

@@ -1,5 +1,5 @@
 
-const { Client } = require("@modelcontextprotocol/sdk/client/index.js");
+const { Client } = require("@modelcontextprotocol/sdk/client");
 const { StdioClientTransport } = require("@modelcontextprotocol/sdk/client/stdio.js");
 const { spawn } = require("child_process");
 const path = require("path");

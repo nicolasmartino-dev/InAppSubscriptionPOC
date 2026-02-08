@@ -11,6 +11,9 @@
         "mobile-mcp": "^0.0.7",
         "@opentelemetry/api": "^1.7.0",
         "@opentelemetry/resources": "^1.18.1",
-        "tsx": "^4.19.2"
+        "tsx": "^4.19.2",
+        "dotenv": "^16.4.5",
+        "ai": "^3.4.9",
+        "@ai-sdk/google": "^0.0.52"
     }
 }
