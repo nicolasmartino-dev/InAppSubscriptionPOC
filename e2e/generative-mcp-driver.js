@@ -54,28 +54,29 @@ async function main() {
 
         const rawUiContent = uiResult.content[0].text;
 
-        // Simplify XML more aggressively to save tokens
-        // Use \s* to handle any whitespace or newlines before attributes
+        // Simplify XML even more aggressively
+        // Handles single or double quotes, and matches any whitespace/newlines
         const uiContent = rawUiContent
-            .replace(/\s+bounds="[^"]*"/g, "")
-            .replace(/\s+package="[^"]*"/g, "")
-            .replace(/\s+index="[^"]*"/g, "")
-            .replace(/\s+class="[^"]*"/g, "")
-            .replace(/\s+(focusable|clickable|enabled|focused|scrollable|long-clickable|password|selected|checkable|checked)="[^"]*"/g, "")
-            .replace(/\s+naf="[^"]*"/g, "")
+            .replace(/\s+bounds=['"][^'"]*['"]/g, "")
+            .replace(/\s+package=['"][^'"]*['"]/g, "")
+            .replace(/\s+index=['"][^'"]*['"]/g, "")
+            .replace(/\s+class=['"][^'"]*['"]/g, "")
+            .replace(/\s+(focusable|clickable|enabled|focused|scrollable|long-clickable|password|selected|checkable|checked)=['"][^'"]*['"]/g, "")
+            .replace(/\s+naf=['"][^'"]*['"]/g, "")
             .replace(/\s+/g, " ")
             .trim();
 
         console.log(`🤖 UI Dump simplified: ${rawUiContent.length} chars -> ${uiContent.length} chars`);
-        if (uiContent.length === rawUiContent.length && rawUiContent.length > 100) {
-            console.warn("⚠️ Warning: XML simplification did not reduce character count. Check input format.");
+        if (uiContent.length === rawUiContent.length && rawUiContent.length > 200) {
+            console.warn("⚠️ Warning: XML simplification did not reduce character count.");
+            console.log("🔍 Sample of raw UI content (First 300 chars):", rawUiContent.substring(0, 300));
         }
 
-        console.log("🤖 Asking LLM (gemini-1.5-flash) to verify screen content...");
+        console.log("🤖 Asking LLM (gemini-flash-latest) to verify screen content...");
         const llmStartTime = Date.now();
 
         const { text } = await generateText({
-            model: google('gemini-1.5-flash'),
+            model: google('gemini-flash-latest'),
             prompt: `
             Analyze the following simplified Android UI dump from a subscription screen.
             Verify if:
